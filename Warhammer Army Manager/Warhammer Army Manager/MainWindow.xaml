@@ -1,0 +1,14 @@
+﻿<Window x:Class="Warhammer_Army_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warhammer_Army_Manager"
+        mc:Ignorable="d"
+        Title="Warhammer Army Manager" Height="450" Width="800">
+    <Grid>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#eee" FontWeight="Black">
+            Cock also der Hänchen Hahn.
+        </TextBlock>
+    </Grid>
+</Window>
