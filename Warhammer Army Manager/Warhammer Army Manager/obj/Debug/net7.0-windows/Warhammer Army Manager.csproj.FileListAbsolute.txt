@@ -1,24 +1,3 @@
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.exe
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.deps.json
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.runtimeconfig.json
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.dll
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.pdb
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.csproj.AssemblyReference.cache
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\MainWindow.g.cs
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\App.g.cs
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager_MarkupCompile.cache
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager_MarkupCompile.lref
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\MainWindow.baml
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.g.resources
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.AssemblyInfoInputs.cache
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.AssemblyInfo.cs
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.csproj.CoreCompileInputs.cache
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.dll
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\refint\Warhammer Army Manager.dll
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.pdb
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.genruntimeconfig.cache
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\ref\Warhammer Army Manager.dll
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.exe
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.deps.json
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\bin\Debug\net7.0-windows\Warhammer Army Manager.runtimeconfig.json
@@ -27,6 +6,7 @@ C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.csproj.AssemblyReference.cache
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\MainWindow.g.cs
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager_Content.g.cs
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager_MarkupCompile.cache
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager_MarkupCompile.lref
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\MainWindow.baml
@@ -40,4 +20,3 @@ C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.pdb
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager.genruntimeconfig.cache
 C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\ref\Warhammer Army Manager.dll
-C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\obj\Debug\net7.0-windows\Warhammer Army Manager_Content.g.cs
