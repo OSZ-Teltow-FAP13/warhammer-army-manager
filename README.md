@@ -73,15 +73,15 @@ Es handelt sich um einen Kundenauftrag. Nutzer der zu entwickelnden Anwendung si
 ## Projektphasen
 
 #### 1. Analyse: (5 Stunden)
- - Erfassung und Modellierung des Istzustandes, 
- - Aufdecken von Schwachstellen, 
- - Erfassung und Analyse der Anforderungen,
- - Vorgehensmodell bestimmen und Ablaufplan erstellen,
+ - Erfassung und Modellierung des Istzustandes
+ - Aufdecken von Schwachstellen
+ - Erfassung und Analyse der Anforderungen
+ - Vorgehensmodell bestimmen und Ablaufplan erstellen
  - Design: statische Sachverhalt im Anwendungsfalldiagramm, dynamischer Sachverhalt im Ereignisgesteuerten Prozesskettendiagramm
 
 #### 2. Festlegung der Programmspezifikation: (2 Stunden)
-  - MUSS-Kriterien (Foto erfassen, Foto analysieren, Arbeits- und Kontrollgruppen anlegen und löschen, Analyseergebnisse speichern und zuordnen),
-  - KANN-Kriterien (zusätzlich zur Größenauswertung für das Wachstum erfolgt eine Farbauswertung zu Bestimmung der Vitalität über ausgewählte Farbbereiche)
+  - MUSS-Kriterien (Übersicht über alle Modelle aus Armeebüchern, Armeeliste erfassen, speichern und zur Verfügung stellen, Konvertierung in zulässiges Format) 
+  - KANN-Kriterien (Zusätzlich zu der schriftlichen Übersicht der Modelle kann auch eine 3D Grafik gezeigt werden) 
 
 #### 3. Modellierung des Programmentwurfs: (5 Stunden)
  - Klassendiagramm
@@ -89,7 +89,7 @@ Es handelt sich um einen Kundenauftrag. Nutzer der zu entwickelnden Anwendung si
  - MockUp Modellierung
 
 #### 4. Implementierung (25 Stunden)
- -	Programmierung des Programms und der Datenbank
+ - Programmierung des Programms und der Datenbank
  - Erstellung der Benutzeroberfläche
 
 #### 5. Programmtest (3 Stunden)
