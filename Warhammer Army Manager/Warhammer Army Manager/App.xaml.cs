@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,41 +18,32 @@ namespace Warhammer_Army_Manager
     public partial class App : Application
     {
         public App()
-        {
-            InsertData();
-            PrintData();
+        {              
+            addSampleData();
         }
 
-        private static void InsertData()
+        private static void addSampleData()
         {
             using (var context = new UnitDbContext())
             {
                 context.Database.EnsureCreated();
 
-                var unit = new Unit
+                string unitName = "187 Pferde der Beflügelung";
+                if (!context.Units.Any(unit => unit.Name == unitName))
                 {
-                    Name = "Test"
-                };
-                context.Units.Add(unit);
-
-                // Saves changes
-                context.SaveChanges();
-            }
-        }
-
-        private static void PrintData()
-        {
-            using (var context = new UnitDbContext())
-            {
-                var units = context.Units.Include(p => p.Tag);
-                foreach (var unit in units)
-                {
-                    var data = new StringBuilder();
-                    data.AppendLine($"Id: {unit.Id}");
-                    data.AppendLine($"Name: {unit.Name}");
-                    data.AppendLine($"Tag: {unit.Tag}");
-                    Console.WriteLine(data.ToString());
+                    var unitHorses = new Unit
+                    {
+                        Name = unitName,
+                        Description = "Eines Tages waren 1337 Pferde auf der Weide am grasen. Dann kamen 69 Einhörnchen und spießten 1150 Pferde auf davon wurden 420 Pferde so verletzt das sie direkt drauf gingen. Die anderen 3.14 sind erst nach Stunden leiden verblutet. Die verbleibenden 187 Pferde kämpfen von nun an gegen die Einhörnchen. Die 8.589.869.056 ist die sechste vollkommene Zahl, 1588 von Cataldi entdeckt. Für weitere Detils: https://de.wikipedia.org/wiki/Liste_besonderer_Zahlen",
+                        Health = 10,
+                        Mobillity = 8,
+                        Courage = 9,
+                        Protection = 1,
+                    };
+                    context.Units.Add(unitHorses);
                 }
+
+                context.SaveChanges();
             }
         }
     }

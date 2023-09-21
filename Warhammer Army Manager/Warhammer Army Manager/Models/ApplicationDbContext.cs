@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,8 @@ namespace Warhammer_Army_Manager.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            /*
+            MySQL Setup -- save for later
             var connectionString = "server=localhost;user=root;password=;database=ef";
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 
@@ -20,6 +24,9 @@ namespace Warhammer_Army_Manager.Models
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors();
+            */
+
+            optionsBuilder.UseSqlite("Data Source = WAMData.db");
         }
     }
 }

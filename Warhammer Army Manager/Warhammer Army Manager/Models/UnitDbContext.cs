@@ -21,6 +21,10 @@ namespace Warhammer_Army_Manager.Models
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
+                entity.Property(e => e.Description);
+                entity.Property(e => e.Health);
+                entity.Property(e => e.Courage);
+                entity.Property(e => e.Protection);
                 entity.HasMany(d => d.Tag);
             });
 

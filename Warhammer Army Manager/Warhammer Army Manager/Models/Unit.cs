@@ -19,7 +19,6 @@ namespace Warhammer_Army_Manager.Models
         public int Mobillity { get; set; }
         public int Courage { get; set; }
         public int Protection { get; set; }
-        public bool isChampion { get; set; }
 
         public virtual ICollection<Tag> Tag { get; private set; } = new ObservableCollection<Tag>();
 
