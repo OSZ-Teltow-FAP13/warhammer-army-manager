@@ -5,10 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warhammer_Army_Manager"
         mc:Ignorable="d"
-        Title="Warhammer Army Manager" Height="450" Width="800">
+        Title="Warhammer Army Manager" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="NavigationContentStyle" TargetType="ContentControl">
+            <Setter Property="ContentTemplate" Value="{StaticResource HomeViewTemplate}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}"
+                             Value="Email">
+                    <Setter Property="ContentTemplate" Value="{StaticResource EmailViewTemplate}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" 
+                             Value="Cloud">
+                    <Setter Property="ContentTemplate" Value="{StaticResource CloudViewTemplate}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#eee" FontWeight="Black">
-            Cock also der Hänchen Hahn.
-        </TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="NavigationMenuListBox" 
+                 Style="{StaticResource NavigationListBoxStyle}"
+                 ItemContainerStyle="{DynamicResource NavigationListBoxItemStyle}"
+                 ItemTemplate="{DynamicResource NavigationDataTemplate}"
+                 ItemsSource="{StaticResource NavigationMenuItems}"/>
+
+        <ContentControl Grid.Column="1" Style="{StaticResource NavigationContentStyle}"/>
     </Grid>
+    <!--
+        <Grid>
+            Text="Cock also der Hänchen Hahn."
+            <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ddd" FontWeight="Black"></TextBlock>
+            <Button Command="{Binding Path=ChangeNameCommand}" Content="Explosion" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Click="ButtonMain_Click"/>
+            </Button>
+        </Grid>
+    -->
 </Window>

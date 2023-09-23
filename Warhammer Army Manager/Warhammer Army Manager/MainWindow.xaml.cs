@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.ViewModels;
 
 namespace Warhammer_Army_Manager
 {
@@ -22,7 +26,27 @@ namespace Warhammer_Army_Manager
     {
         public MainWindow()
         {
+            var MainWindowViewModel = new MainWindowViewModel();
+            MainWindowViewModel.Name = "Kevin";
+
+            DataContext = MainWindowViewModel;
             InitializeComponent();
+
+            MainWindowViewModel.Name = "Mark";
+        }
+
+        private void ButtonMain_Click(object sender, RoutedEventArgs e)
+        {
+            using (UnitDbContext context = new UnitDbContext())
+            {
+                MessageBox.Show(context.Tags.ToQueryString());
+                Unit unit = context.Units.FirstOrDefault(unit => unit.Name == "187 Pferde der Beflügelung");
+                if(unit != null)
+                {
+                    MessageBox.Show("Einheiten ID: " + unit.Id);
+                }
+
+            }
         }
     }
 }
