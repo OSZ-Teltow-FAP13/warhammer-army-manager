@@ -24,6 +24,23 @@
 
 ---
 
+## naming conventions
+
+```txt
+ProjectTag => WAM [W]arhammer [A]rmy [M]anager
+```
+
+### feature branches 🌴
+
+```txt
+#ProjectTag-IssueNo_IssueTitle
+Examples:
+- #WAM-4_Mockups_erstellen
+- #WAM-69_Finale_testungen_mit_unit
+```
+
+---
+
 # Projektantrag
 
 ## Titel der Projektarbeit
