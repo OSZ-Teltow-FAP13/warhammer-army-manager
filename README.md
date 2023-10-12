@@ -39,6 +39,18 @@ Examples:
 - #WAM-69_Finale_testungen_mit_unit
 ```
 
+### fix branches
+
+```txt
+#ProjectTag-IssueNo-Fix+FixIncrementingNumber_IssueTitle
+Examples:
+- #WAM-4-Fix1_Mockups_erstellen
+- #WAM-4-Fix2_Mockups_erstellen
+- #WAM-4-Fix3_Mockups_erstellen
+- #WAM-4-Fix4_Mockups_erstellen
+- ...
+```
+
 ---
 
 # Projektantrag
