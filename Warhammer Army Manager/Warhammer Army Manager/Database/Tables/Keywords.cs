@@ -5,12 +5,11 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Warhammer_Army_Manager.Models
+namespace Warhammer_Army_Manager.Database.Tables
 {
-    internal class Tag
+    internal class Keywords
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public string? Slug { get; set; }
     }
 }

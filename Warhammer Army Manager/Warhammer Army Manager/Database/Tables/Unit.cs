@@ -8,19 +8,18 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Warhammer_Army_Manager.Models
+namespace Warhammer_Army_Manager.Database.Tables
 {
     internal class Unit
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public string? Description { get; set; }
-        public int Health { get; set; }
-        public int Mobillity { get; set; }
-        public int Courage { get; set; }
-        public int Protection { get; set; }
+        public int Wounds { get; set; }
+        public int Move { get; set; }
+        public int Bravery { get; set; }
+        public int Save { get; set; }
 
-        public virtual ICollection<Tag> Tag { get; private set; } = new ObservableCollection<Tag>();
+        public virtual ICollection<Keywords> Tag { get; private set; } = new ObservableCollection<Keywords>();
 
     }
 }

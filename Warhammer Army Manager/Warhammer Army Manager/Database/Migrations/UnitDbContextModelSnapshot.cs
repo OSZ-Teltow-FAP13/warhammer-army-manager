@@ -3,7 +3,8 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Database;
+using Warhammer_Army_Manager.Database.Tables;
 
 #nullable disable
 
@@ -27,16 +28,7 @@ namespace Warhammer_Army_Manager.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("UnitId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UnitId");
 
                     b.ToTable("Tags");
                 });
@@ -47,24 +39,21 @@ namespace Warhammer_Army_Manager.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Courage")
+                    b.Property<int>("Bravery")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Health")
+                    b.Property<int>("Wounds")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Mobillity")
+                    b.Property<int>("Move")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Protection")
-                        .HasColumnType("INTEGER");
+                    b.Property<int>("Save")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
