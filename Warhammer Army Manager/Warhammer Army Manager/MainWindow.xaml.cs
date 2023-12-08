@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Warhammer_Army_Manager.Database;
-using Warhammer_Army_Manager.Database.Models;
+using Warhammer_Army_Manager.Database.Tables;
 using Warhammer_Army_Manager.ViewModels;
 
 namespace Warhammer_Army_Manager
@@ -40,7 +40,7 @@ namespace Warhammer_Army_Manager
         {
             using (UnitDbContext context = new UnitDbContext())
             {
-                MessageBox.Show(context.Tags.ToQueryString());
+                MessageBox.Show(context.Keywords.ToQueryString());
                 Unit unit = context.Units.FirstOrDefault(unit => unit.Name == "187 Pferde der Beflügelung");
                 if(unit != null)
                 {

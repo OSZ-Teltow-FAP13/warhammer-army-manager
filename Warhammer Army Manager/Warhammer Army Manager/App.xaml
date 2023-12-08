@@ -100,15 +100,5 @@
             <system:String>Email</system:String>
             <system:String>Cloud</system:String>
         </x:Array>
-
-        <DataTemplate x:Key="HomeViewTemplate">
-            <views:DashboardView/>
-        </DataTemplate>
-        <DataTemplate x:Key="EmailViewTemplate">
-            <views:DashboardView/>
-        </DataTemplate>
-        <DataTemplate x:Key="CloudViewTemplate">
-            <views:DashboardView/>
-        </DataTemplate>
     </Application.Resources>
 </Application>

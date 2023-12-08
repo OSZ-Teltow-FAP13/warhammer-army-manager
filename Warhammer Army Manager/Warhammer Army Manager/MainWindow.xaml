@@ -8,17 +8,6 @@
         Title="Warhammer Army Manager" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="NavigationContentStyle" TargetType="ContentControl">
-            <Setter Property="ContentTemplate" Value="{StaticResource HomeViewTemplate}"/>
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}"
-                             Value="Email">
-                    <Setter Property="ContentTemplate" Value="{StaticResource EmailViewTemplate}"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" 
-                             Value="Cloud">
-                    <Setter Property="ContentTemplate" Value="{StaticResource CloudViewTemplate}"/>
-                </DataTrigger>
-            </Style.Triggers>
         </Style>
     </Window.Resources>
 
