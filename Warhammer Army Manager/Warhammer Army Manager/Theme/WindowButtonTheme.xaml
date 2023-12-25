@@ -19,12 +19,7 @@
 
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            
+
         </Style.Setters>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="Green"/>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 </ResourceDictionary>
