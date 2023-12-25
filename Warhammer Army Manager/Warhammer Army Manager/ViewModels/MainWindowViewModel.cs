@@ -14,44 +14,27 @@ using Warhammer_Army_Manager.ViewModels.Commands;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
-    internal class MainWindowViewModel : BaseViewModel
+    class MainWindowViewModel : ObservableObject
     {
-        private string? _Name;
-        private IList<Unit> _Units;
-        private readonly DelegateCommand _changeNameCommand;
+        public DashboardViewModel DashboardVM { get; set; }
 
-        public ICommand ChangeNameCommand => _changeNameCommand;
+        private object _currentView;
 
-        public string Name
+        public object CurrentView
         {
-            get => _Name;
-            set => base.SetProperty(ref _Name, value);
+            get { return _currentView; }
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged();
+            }
         }
-        public IList<Unit> Units
-        {
-            get => _Units;
-            set => base.SetProperty(ref _Units, value);
-        }
+
 
         public MainWindowViewModel()
         {
-            _Units = new List<Unit>
-            {
-                new Unit {}
-            };
-
-            _changeNameCommand = new DelegateCommand(OnChangeName, CanChangeName);
-        }
-
-        private void OnChangeName(object commandParameter)
-        {
-            Name = "Walter";
-            _changeNameCommand.InvokeCanExecuteChanged();
-        }
-
-        private bool CanChangeName(object commandParameter)
-        {
-            return Name != "Walter";
+            DashboardVM = new DashboardViewModel();
+            CurrentView = DashboardVM;
         }
 
     }

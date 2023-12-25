@@ -26,26 +26,19 @@ namespace Warhammer_Army_Manager
     {
         public MainWindow()
         {
-            var MainWindowViewModel = new MainWindowViewModel();
-            MainWindowViewModel.Name = "Kevin";
-
-            DataContext = MainWindowViewModel;
             InitializeComponent();
-
-            MainWindowViewModel.Name = "Mark";
         }
 
-        private void ButtonMain_Click(object sender, RoutedEventArgs e)
+        private void drag(object sender, MouseButtonEventArgs e)
         {
-            using (UnitDbContext context = new UnitDbContext())
+            try
             {
-                MessageBox.Show(context.Tags.ToQueryString());
-                Unit unit = context.Units.FirstOrDefault(unit => unit.Name == "187 Pferde der Beflügelung");
-                if(unit != null)
-                {
-                    MessageBox.Show("Einheiten ID: " + unit.Id);
-                }
+                DragMove();
+            }
+            catch (Exception)
+            {
 
+                throw;
             }
         }
     }

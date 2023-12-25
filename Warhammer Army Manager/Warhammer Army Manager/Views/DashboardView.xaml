@@ -8,18 +8,94 @@
              xmlns:vm="clr-namespace:Warhammer_Army_Manager.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel Orientation="Vertical"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <iconPacks:PackIconMaterialDesign HorizontalAlignment="Center"
-                                              Foreground="{StaticResource PrimaryDarkBrush}"
-                                              Width="100" Height="100"
-                                              Kind="Home"/>
-            <TextBlock FontSize="40" FontWeight="Bold" 
-                       VerticalAlignment="Center" HorizontalAlignment="Center" 
-                       Foreground="{StaticResource PrimaryDarkBrush}"
-                       Text="{Binding Title}"/>
+    <StackPanel>
+        <TextBlock Text="Dashboard"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+        
+        <StackPanel Orientation="Horizontal">
+            <Border Width="400"
+                    Height="200">
+                
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="#3aa0ff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                
+                <Border.Clip>
+                    <RectangleGeometry 
+                        RadiusX="10"
+                        RadiusY="10" 
+                        Rect="0,0,400,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Anzahl &#x0a;Einheiten"
+                                   Foreground="White"
+                                   FontSize="28"
+                                   Margin="20,10,10,0"/>
+                        <Grid>
+                            <TextBlock Text="1337"
+                                       Foreground="White"
+                                       FontSize="18"
+                                       Margin="0,20,0,20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Width="300"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="25,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#ffc554" Offset="0.0"/>
+                        <GradientStop Color="#ffb738" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                
+            </Border>
+            
         </StackPanel>
-    </Grid>
+        
+        <StackPanel Margin="0,35,0,0">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="35,0,0,0"/>
+                </Style>  
+            </StackPanel.Resources>
+            
+            <StackPanel Orientation="Horizontal">
+                <Border Width="150"
+                        Height="150"
+                        Background="#844eff"
+                        CornerRadius="10"
+                        Margin="0"/>
+                
+                <Border Width="150"
+                        Height="150"
+                        Background="#4e99ff"
+                        CornerRadius="10"/>
+                
+                <Border Width="150"
+                        Height="150"
+                        Background="#4eff91"
+                        CornerRadius="10"/>
+                
+                <Border Width="150"
+                        Height="150"
+                        Background="#ecff4e"
+                        CornerRadius="10"/>
+            </StackPanel>
+        </StackPanel>
+    
+    </StackPanel>
 </UserControl>

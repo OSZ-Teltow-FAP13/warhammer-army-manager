@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
-    internal class DashboardViewModel : BaseViewModel
+    class DashboardViewModel
     {
-        public string Title { get; } = "Home";
 
     }
 }
