@@ -7,7 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\ArmyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DashboardView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TagView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UnitView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WeaponView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,7 +33,19 @@
     <Page Update="Theme\WindowButtonTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ArmyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\DashboardView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TagView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UnitView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WeaponView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

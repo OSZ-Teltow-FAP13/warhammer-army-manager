@@ -20,6 +20,23 @@
             <DataTemplate DataType="{x:Type viewModel:DashboardViewModel}">
                 <views:DashboardView/>
             </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:ArmyViewModel}">
+                <views:ArmyView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:UnitViewModel}">
+                <views:UnitView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:WeaponViewModel}">
+                <views:WeaponView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:TagViewModel}">
+                <views:TagView/>
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -9,20 +9,24 @@ namespace Warhammer_Army_Manager.ViewModels.Commands
 {
     internal class RelayCommand : ICommand
     {
-        private readonly Action<object> execute;
-        private readonly Func<object, bool> canExecute;
+        private readonly Action<object> _execute;
+        private readonly Func<object, bool> _canExecute;
 
-        public event EventHandler? CanExecuteChanged;
-
-        public RelayCommand(Action<object> executeAction, Func<object, bool> canExecuteAction)
+        public event EventHandler? CanExecuteChanged
         {
-            execute = executeAction;
-            canExecute = canExecuteAction;
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public void Execute(object parameter) => execute(parameter);
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        {
+            _execute = execute;
+            _canExecute = canExecute;
+        }
 
-        public bool CanExecute(object parameter) => canExecute?.Invoke(parameter) ?? true;
+        public void Execute(object parameter) => _execute(parameter);
+
+        public bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
 
     }
 }
