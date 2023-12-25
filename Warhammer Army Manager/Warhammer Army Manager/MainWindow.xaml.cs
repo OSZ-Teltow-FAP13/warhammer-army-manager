@@ -38,7 +38,31 @@ namespace Warhammer_Army_Manager
             catch (Exception)
             {
 
-                throw;
+                //throw;
+            }
+        }
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Close();
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+        }
+        private void Minimize(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.WindowState = WindowState.Minimized;
+            }
+            catch (Exception)
+            {
+
+                //throw;
             }
         }
     }
