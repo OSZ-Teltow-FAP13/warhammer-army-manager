@@ -7,12 +7,8 @@ using Warhammer_Army_Manager.ViewModels.Commands;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
-    class TagViewModel : ObservableObject
+    class TagViewModel : ViewModel
     {
 
-        public TagViewModel()
-        {
-
-        }
     }
 }

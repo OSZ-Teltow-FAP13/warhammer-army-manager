@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Services;
+using Warhammer_Army_Manager.ViewModels;
 
 namespace Warhammer_Army_Manager
 {
@@ -17,9 +20,40 @@ namespace Warhammer_Army_Manager
     /// </summary>
     public partial class App : Application
     {
+        private readonly ServiceProvider _serviceProvider;
+
         public App()
-        {              
+        {
+            ServiceCollection services = new();
+
+            services.AddSingleton<MainWindow>(provider => new MainWindow()
+            {
+                DataContext = provider.GetRequiredService<MainWindowViewModel>()
+            });
+
+            // view models
+            services.AddSingleton<MainWindowViewModel>();
+            services.AddSingleton<DashboardViewModel>();
+            services.AddSingleton<ArmyViewModel>();
+            services.AddSingleton<UnitViewModel>();
+            services.AddSingleton<WeaponViewModel>();
+            services.AddSingleton<TagViewModel>();
+
+            // actual services
+            services.AddSingleton<INavigationService, NavigationService>();
+            services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
+
+            _serviceProvider = services.BuildServiceProvider();
+
             addSampleData();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            MainWindow mw = _serviceProvider.GetService<MainWindow>()!;
+            mw.Show();
         }
 
         private static void addSampleData()

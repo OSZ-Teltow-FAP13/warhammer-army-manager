@@ -24,9 +24,9 @@ namespace Warhammer_Army_Manager.ViewModels.Commands
             _canExecute = canExecute;
         }
 
-        public void Execute(object parameter) => _execute(parameter);
+        public void Execute(object? parameter) => _execute(parameter!);
 
-        public bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
+        public bool CanExecute(object? parameter) => _canExecute?.Invoke(parameter!) ?? true;
 
     }
 }

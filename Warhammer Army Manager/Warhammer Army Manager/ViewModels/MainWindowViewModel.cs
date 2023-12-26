@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Services;
 using Warhammer_Army_Manager.ViewModels.Commands;
 
 namespace Warhammer_Army_Manager.ViewModels
@@ -21,72 +22,47 @@ namespace Warhammer_Army_Manager.ViewModels
         public RelayCommand UnitViewCommand { get; set; }
         public RelayCommand WeaponViewCommand { get; set; }
         public RelayCommand TagViewCommand { get; set; }
-        public RelayCommand TagAddViewCommand { get; set; }
 
+        private INavigationService _navigation;
 
-        public DashboardViewModel DashboardVM { get; set; }
-        public ArmyViewModel ArmyVM { get; set; }
-        public UnitViewModel UnitVM { get; set; }
-        public WeaponViewModel WeaponVM { get; set; }
-        public TagViewModel TagVM { get; set; }
-        public TagAddViewModel TagAddVM { get; set; }
-
-        private object _currentView = new DashboardViewModel();
-
-        public object CurrentView
+        public INavigationService Navigation
         {
-            get { return _currentView; }
-            set
+            get => _navigation;
+            set 
             {
-                _currentView = value;
+                _navigation = value;
                 OnPropertyChanged();
             }
         }
-
         
-        public MainWindowViewModel()
+        public MainWindowViewModel(INavigationService nav)
         {
-            DashboardVM = new DashboardViewModel();
-
-            ArmyVM = new ArmyViewModel();
-
-            UnitVM = new UnitViewModel();
-
-            WeaponVM = new WeaponViewModel();
-
-            TagVM = new TagViewModel();
-            TagAddVM = new TagAddViewModel();
-
-            CurrentView = DashboardVM;
+            Navigation = nav;
+            Navigation.NavigateTo<DashboardViewModel>();
 
             DashboardViewCommand = new RelayCommand(o =>
             {
-                CurrentView = DashboardVM;
+                Navigation.NavigateTo<DashboardViewModel>();
             });
 
             ArmyViewCommand = new RelayCommand(o =>
             {
-                CurrentView = ArmyVM;
+                Navigation.NavigateTo<ArmyViewModel>();
             });
 
             UnitViewCommand = new RelayCommand(o =>
             {
-                CurrentView = UnitVM;
+                Navigation.NavigateTo<UnitViewModel>();
             });
 
             WeaponViewCommand = new RelayCommand(o =>
             {
-                CurrentView = WeaponVM;
+                Navigation.NavigateTo<WeaponViewModel>();
             });
 
             TagViewCommand = new RelayCommand(o =>
             {
-                CurrentView = TagVM;
-            });
-
-            TagAddViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = TagAddVM;
+                Navigation.NavigateTo<TagViewModel>();
             });
         }
 

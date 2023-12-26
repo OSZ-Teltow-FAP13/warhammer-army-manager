@@ -33,7 +33,9 @@
                   Name="DataGridTags"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
-
+                <DataGridTextColumn Header="Id" 
+                                    Binding="{Binding Id}"
+                                    IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name" 
                                     Binding="{Binding Name}"
                                     MinWidth="400"/>

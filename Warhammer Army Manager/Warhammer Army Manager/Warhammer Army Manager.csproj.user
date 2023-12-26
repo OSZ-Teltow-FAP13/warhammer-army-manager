@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
@@ -13,10 +12,7 @@
     <Compile Update="Views\DashboardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Tag\TagAddView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Tag\TagView.xaml.cs">
+    <Compile Update="Views\TagView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UnitView.xaml.cs">
@@ -45,10 +41,7 @@
     <Page Update="Views\DashboardView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Tag\TagAddView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Tag\TagView.xaml">
+    <Page Update="Views\TagView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UnitView.xaml">

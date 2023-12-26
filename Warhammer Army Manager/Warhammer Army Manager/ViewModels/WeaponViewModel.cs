@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
-    class WeaponViewModel : ObservableObject
+    class WeaponViewModel : ViewModel
     {
     }
 }

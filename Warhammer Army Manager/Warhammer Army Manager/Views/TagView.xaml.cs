@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace Warhammer_Army_Manager.Views
     /// </summary>
     public partial class TagView : UserControl
     {
+
         public TagView()
         {
             InitializeComponent();
