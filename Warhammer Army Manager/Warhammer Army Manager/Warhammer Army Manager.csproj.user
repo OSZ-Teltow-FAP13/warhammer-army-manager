@@ -13,7 +13,10 @@
     <Compile Update="Views\DashboardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\TagView.xaml.cs">
+    <Compile Update="Views\Tag\TagAddView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Tag\TagView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UnitView.xaml.cs">
@@ -25,6 +28,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Theme\DataGridTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Theme\MenuButtonTheme.xaml">
@@ -39,7 +45,10 @@
     <Page Update="Views\DashboardView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\TagView.xaml">
+    <Page Update="Views\Tag\TagAddView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Tag\TagView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UnitView.xaml">

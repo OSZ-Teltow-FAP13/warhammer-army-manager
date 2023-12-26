@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Warhammer_Army_Manager.Views
 {
     /// <summary>
-    /// Interaktionslogik für TagView.xaml
+    /// Interaktionslogik für TagAddView.xaml
     /// </summary>
-    public partial class TagView : UserControl
+    public partial class TagAddView : UserControl
     {
-        public TagView()
+        public TagAddView()
         {
             InitializeComponent();
         }

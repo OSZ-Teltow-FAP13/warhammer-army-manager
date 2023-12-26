@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:Warhammer_Army_Manager"
              xmlns:viewModel="clr-namespace:Warhammer_Army_Manager.ViewModels"
              xmlns:views="clr-namespace:Warhammer_Army_Manager.Views"
-             xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.MaterialDesign"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
@@ -15,6 +14,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/WindowButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/DataGridTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:DashboardViewModel}">
@@ -32,11 +32,15 @@
             <DataTemplate DataType="{x:Type viewModel:WeaponViewModel}">
                 <views:WeaponView/>
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewModel:TagViewModel}">
                 <views:TagView/>
             </DataTemplate>
             
+            <DataTemplate DataType="{x:Type viewModel:TagAddViewModel}">
+                <views:TagAddView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

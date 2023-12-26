@@ -12,6 +12,9 @@ namespace Warhammer_Army_Manager.Models
 {
     internal class ApplicationDbContext : DbContext
     {
+        public DbSet<Unit> Units { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             /*
@@ -27,6 +30,29 @@ namespace Warhammer_Army_Manager.Models
             */
 
             optionsBuilder.UseSqlite("Data Source = WAMData.db");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Unit>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired();
+                entity.Property(e => e.Description);
+                entity.Property(e => e.Health);
+                entity.Property(e => e.Courage);
+                entity.Property(e => e.Protection);
+                entity.HasMany(d => d.Tag);
+            });
+
+            modelBuilder.Entity<Tag>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired();
+                entity.Property(e => e.Slug).IsRequired();
+            });
         }
     }
 }

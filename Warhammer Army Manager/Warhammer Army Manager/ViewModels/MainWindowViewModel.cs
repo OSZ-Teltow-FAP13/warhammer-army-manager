@@ -21,6 +21,7 @@ namespace Warhammer_Army_Manager.ViewModels
         public RelayCommand UnitViewCommand { get; set; }
         public RelayCommand WeaponViewCommand { get; set; }
         public RelayCommand TagViewCommand { get; set; }
+        public RelayCommand TagAddViewCommand { get; set; }
 
 
         public DashboardViewModel DashboardVM { get; set; }
@@ -28,6 +29,7 @@ namespace Warhammer_Army_Manager.ViewModels
         public UnitViewModel UnitVM { get; set; }
         public WeaponViewModel WeaponVM { get; set; }
         public TagViewModel TagVM { get; set; }
+        public TagAddViewModel TagAddVM { get; set; }
 
         private object _currentView = new DashboardViewModel();
 
@@ -45,10 +47,15 @@ namespace Warhammer_Army_Manager.ViewModels
         public MainWindowViewModel()
         {
             DashboardVM = new DashboardViewModel();
+
             ArmyVM = new ArmyViewModel();
+
             UnitVM = new UnitViewModel();
+
             WeaponVM = new WeaponViewModel();
+
             TagVM = new TagViewModel();
+            TagAddVM = new TagAddViewModel();
 
             CurrentView = DashboardVM;
 
@@ -70,6 +77,16 @@ namespace Warhammer_Army_Manager.ViewModels
             WeaponViewCommand = new RelayCommand(o =>
             {
                 CurrentView = WeaponVM;
+            });
+
+            TagViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = TagVM;
+            });
+
+            TagAddViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = TagAddVM;
             });
         }
 

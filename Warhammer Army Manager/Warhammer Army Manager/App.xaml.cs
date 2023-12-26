@@ -24,7 +24,7 @@ namespace Warhammer_Army_Manager
 
         private static void addSampleData()
         {
-            using (var context = new UnitDbContext())
+            using (var context = new ApplicationDbContext())
             {
                 context.Database.EnsureCreated();
 
@@ -41,6 +41,16 @@ namespace Warhammer_Army_Manager
                         Protection = 1,
                     };
                     context.Units.Add(unitHorses);
+                }
+
+                if (!context.Tags.Any(tag => tag.Name == "Tag01"))
+                {
+                    var tagTest = new Tag
+                    {
+                        Name = "Tag01",
+                        Slug = "tag-01"
+                    };
+                    context.Tags.Add(tagTest);
                 }
 
                 context.SaveChanges();

@@ -9,7 +9,7 @@ using Warhammer_Army_Manager.Models;
 
 namespace Warhammer_Army_Manager.Migrations
 {
-    [DbContext(typeof(UnitDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class UnitDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
