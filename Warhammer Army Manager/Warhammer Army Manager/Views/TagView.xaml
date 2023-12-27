@@ -7,6 +7,7 @@
              xmlns:viewModel="clr-namespace:Warhammer_Army_Manager.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <StackPanel>
 
         <TextBlock Text="Schlüsselwörter"
@@ -21,7 +22,7 @@
                     ToolTip="add"
                     Margin="0,0,20,0"
                     Padding="20 7"
-                    Command="{Binding TagAddViewCommand}"/>
+                    Command="{Binding ShowWindowCommand}"/>
             <Button Content="Alle Löschen"
                     ToolTip="delete all"
                     Margin="0,0,20,0"
@@ -31,18 +32,21 @@
 
         <DataGrid Grid.Row="2"
                   Name="DataGridTags"
-                  AutoGenerateColumns="False">
+                  ItemsSource="{Binding Tags}"
+                  AutoGenerateColumns="False"
+                  HorizontalAlignment="Left"
+                  MaxHeight="400">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" 
-                                    Binding="{Binding Id}"
-                                    IsReadOnly="True"/>
+                                        Binding="{Binding Id}"
+                                        IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name" 
-                                    Binding="{Binding Name}"
-                                    MinWidth="400"/>
+                                        Binding="{Binding Name}"
+                                        MinWidth="400"/>
                 <DataGridTextColumn Header="Slug"
-                                    Binding="{Binding Slug}"
-                                    MinWidth="200"/>
-                
+                                        Binding="{Binding Slug}"
+                                        MinWidth="200"/>
+
                 <DataGridTemplateColumn Header="Aktionen" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -54,7 +58,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
+
             </DataGrid.Columns>
         </DataGrid>
 

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.ViewModels;
 
 namespace Warhammer_Army_Manager.Views
 {
@@ -26,16 +27,6 @@ namespace Warhammer_Army_Manager.Views
         public TagView()
         {
             InitializeComponent();
-            LoadTags();
-
-        }
-
-        private void LoadTags()
-        {
-            using (var context = new ApplicationDbContext())
-            {
-                DataGridTags.ItemsSource = context.Tags.ToList();
-            }
         }
 
         private void Delete(object sender, RoutedEventArgs e)

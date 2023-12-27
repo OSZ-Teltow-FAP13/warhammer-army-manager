@@ -12,6 +12,7 @@ using System.Windows;
 using Warhammer_Army_Manager.Models;
 using Warhammer_Army_Manager.Services;
 using Warhammer_Army_Manager.ViewModels;
+using Warhammer_Army_Manager.Views;
 
 namespace Warhammer_Army_Manager
 {
@@ -29,7 +30,7 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<MainWindow>(provider => new MainWindow()
             {
                 DataContext = provider.GetRequiredService<MainWindowViewModel>()
-            });
+            }); 
 
             // view models
             services.AddSingleton<MainWindowViewModel>();
@@ -38,10 +39,18 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<UnitViewModel>();
             services.AddSingleton<WeaponViewModel>();
             services.AddSingleton<TagViewModel>();
+            services.AddSingleton<TagAddViewModel>();
+            services.AddSingleton<TagAddView>(provider => new TagAddView()
+            {
+                DataContext = provider.GetRequiredService<TagAddViewModel>()
+            });
+
 
             // actual services
             services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
+            services.AddSingleton<ViewModelLocator>();
+
 
             _serviceProvider = services.BuildServiceProvider();
 

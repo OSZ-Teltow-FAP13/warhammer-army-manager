@@ -76,7 +76,7 @@
                                    FontSize="22"
                                    Margin="20,10,10,0"/>
                         <Grid>
-                            <TextBlock Text="1337"
+                            <TextBlock Text="{Binding ArmyCount}"
                                        Foreground="White"
                                        FontSize="18"
                                        Margin="0,20,0,20"
@@ -96,7 +96,7 @@
                                    FontSize="22"
                                    Margin="20,10,10,0"/>
                         <Grid>
-                            <TextBlock Text="420"
+                            <TextBlock Text="{Binding UnitCount}"
                                        Foreground="White"
                                        FontSize="18"
                                        Margin="0,20,0,20"
@@ -116,7 +116,7 @@
                                    FontSize="22"
                                    Margin="20,10,10,0"/>
                         <Grid>
-                            <TextBlock Text="7331"
+                            <TextBlock Text="{Binding WeaponCount}"
                                        Foreground="White"
                                        FontSize="18"
                                        Margin="0,20,0,20"
@@ -135,7 +135,7 @@
                                    FontSize="22"
                                    Margin="20,10,10,0"/>
                         <Grid>
-                            <TextBlock Text="69420"
+                            <TextBlock Text="{Binding TagCount}"
                                        FontSize="18"
                                        Margin="0,20,0,20"
                                        VerticalAlignment="Center"
