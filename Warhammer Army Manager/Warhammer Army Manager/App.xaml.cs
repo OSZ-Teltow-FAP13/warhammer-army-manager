@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Warhammer_Army_Manager.Database;
-using Warhammer_Army_Manager.Database.Tables;
+using Warhammer_Army_Manager.Database.Models;
 
 namespace Warhammer_Army_Manager
 {
