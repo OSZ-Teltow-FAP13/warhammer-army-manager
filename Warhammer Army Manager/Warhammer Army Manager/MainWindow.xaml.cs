@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Warhammer_Army_Manager.Database;
-using Warhammer_Army_Manager.Database.Tables;
+using Warhammer_Army_Manager.Database.Models;
 using Warhammer_Army_Manager.ViewModels;
 
 namespace Warhammer_Army_Manager
