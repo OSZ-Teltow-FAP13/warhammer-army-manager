@@ -7,7 +7,7 @@ using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Warhammer_Army_Manager.Database.Tables
+namespace Warhammer_Army_Manager.Database.Models
 {
     internal class Weapons
     {

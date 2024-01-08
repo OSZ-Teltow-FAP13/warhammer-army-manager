@@ -9,7 +9,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Warhammer_Army_Manager.Database.Tables
+namespace Warhammer_Army_Manager.Database.Models
 {
     internal class Unit
     {

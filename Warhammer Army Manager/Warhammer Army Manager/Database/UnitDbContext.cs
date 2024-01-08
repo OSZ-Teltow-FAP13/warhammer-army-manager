@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using Warhammer_Army_Manager.Database.Tables;
+using Warhammer_Army_Manager.Database.Models;
 
 namespace Warhammer_Army_Manager.Database
 {
