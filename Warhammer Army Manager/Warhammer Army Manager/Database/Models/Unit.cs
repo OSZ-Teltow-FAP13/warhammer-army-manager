@@ -22,6 +22,7 @@ namespace Warhammer_Army_Manager.Database.Models
         public int Bravery { get; set; }
         [Required, MaxLength(2)]
         public string? Save { get; set; }
+        public int Points { get; set; }
 
         public virtual ICollection<Keywords> Keywords { get; private set; } = new ObservableCollection<Keywords>();
         public virtual ICollection<Weapons> Weapons { get; private set; } = new ObservableCollection<Weapons>();

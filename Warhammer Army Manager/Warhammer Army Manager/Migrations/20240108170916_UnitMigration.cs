@@ -16,7 +16,7 @@ namespace Warhammer_Army_Manager.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
+                    Keyword = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -33,7 +33,8 @@ namespace Warhammer_Army_Manager.Migrations
                     Wounds = table.Column<int>(type: "INTEGER", nullable: false),
                     Move = table.Column<int>(type: "INTEGER", nullable: false),
                     Bravery = table.Column<int>(type: "INTEGER", nullable: false),
-                    Save = table.Column<string>(type: "TEXT", maxLength: 2, nullable: false)
+                    Save = table.Column<string>(type: "TEXT", maxLength: 2, nullable: false),
+                    Points = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

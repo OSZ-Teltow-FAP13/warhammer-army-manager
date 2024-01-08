@@ -11,7 +11,7 @@ using Warhammer_Army_Manager.Database;
 namespace Warhammer_Army_Manager.Migrations
 {
     [DbContext(typeof(UnitDbContext))]
-    [Migration("20231208083013_UnitMigration")]
+    [Migration("20240108170916_UnitMigration")]
     partial class UnitMigration
     {
         /// <inheritdoc />
@@ -50,13 +50,13 @@ namespace Warhammer_Army_Manager.Migrations
                     b.ToTable("UnitWeapons");
                 });
 
-            modelBuilder.Entity("Warhammer_Army_Manager.Database.Tables.Keywords", b =>
+            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Keywords", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Keyword")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
@@ -66,7 +66,7 @@ namespace Warhammer_Army_Manager.Migrations
                     b.ToTable("Keywords");
                 });
 
-            modelBuilder.Entity("Warhammer_Army_Manager.Database.Tables.Unit", b =>
+            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Unit", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -83,6 +83,9 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Points")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Save")
                         .IsRequired()
                         .HasMaxLength(2)
@@ -96,7 +99,7 @@ namespace Warhammer_Army_Manager.Migrations
                     b.ToTable("Units");
                 });
 
-            modelBuilder.Entity("Warhammer_Army_Manager.Database.Tables.Weapons", b =>
+            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Weapons", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -148,13 +151,13 @@ namespace Warhammer_Army_Manager.Migrations
 
             modelBuilder.Entity("KeywordsUnit", b =>
                 {
-                    b.HasOne("Warhammer_Army_Manager.Database.Tables.Keywords", null)
+                    b.HasOne("Warhammer_Army_Manager.Database.Models.Keywords", null)
                         .WithMany()
                         .HasForeignKey("KeywordsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warhammer_Army_Manager.Database.Tables.Unit", null)
+                    b.HasOne("Warhammer_Army_Manager.Database.Models.Unit", null)
                         .WithMany()
                         .HasForeignKey("UnitsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -163,13 +166,13 @@ namespace Warhammer_Army_Manager.Migrations
 
             modelBuilder.Entity("UnitWeapons", b =>
                 {
-                    b.HasOne("Warhammer_Army_Manager.Database.Tables.Unit", null)
+                    b.HasOne("Warhammer_Army_Manager.Database.Models.Unit", null)
                         .WithMany()
                         .HasForeignKey("UnitsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warhammer_Army_Manager.Database.Tables.Weapons", null)
+                    b.HasOne("Warhammer_Army_Manager.Database.Models.Weapons", null)
                         .WithMany()
                         .HasForeignKey("WeaponsId")
                         .OnDelete(DeleteBehavior.Cascade)

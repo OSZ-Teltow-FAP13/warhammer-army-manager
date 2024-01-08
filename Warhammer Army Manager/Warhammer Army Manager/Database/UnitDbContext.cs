@@ -26,12 +26,13 @@ namespace Warhammer_Army_Manager.Database
                 entity.Property(e => e.Wounds);
                 entity.Property(e => e.Bravery);
                 entity.Property(e => e.Save);
+                entity.Property(e => e.Points);
             });
 
             modelBuilder.Entity<Keywords>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Name);
+                entity.Property(e => e.Keyword);
             });
 
             modelBuilder.Entity<Weapons>(entity =>
@@ -47,6 +48,8 @@ namespace Warhammer_Army_Manager.Database
                 entity.Property(e => e.Damage);
                 entity.Property(e => e.SpecialEffect);
             });
+
+
         }
     }
 }
