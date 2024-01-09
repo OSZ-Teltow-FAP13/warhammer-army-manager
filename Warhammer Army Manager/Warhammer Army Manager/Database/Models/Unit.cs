@@ -26,6 +26,7 @@ namespace Warhammer_Army_Manager.Database.Models
 
         public virtual ICollection<Keywords> Keywords { get; private set; } = new ObservableCollection<Keywords>();
         public virtual ICollection<Weapons> Weapons { get; private set; } = new ObservableCollection<Weapons>();
+        public virtual ICollection<Weapons> Armys { get; private set; } = new ObservableCollection<Weapons>();
 
     }
 }

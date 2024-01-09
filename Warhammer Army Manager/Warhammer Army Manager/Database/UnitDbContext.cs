@@ -49,7 +49,7 @@ namespace Warhammer_Army_Manager.Database
                 entity.Property(e => e.SpecialEffect);
             });
 
-            modelBuilder.Entity<Army>(entity =>
+            modelBuilder.Entity<Armys>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
