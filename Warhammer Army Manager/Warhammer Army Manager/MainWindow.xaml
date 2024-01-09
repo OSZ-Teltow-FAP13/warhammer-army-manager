@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warhammer_Army_Manager"
         mc:Ignorable="d"
-        Title="Warhammer Army Manager" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Warhammer Army Manager " Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="NavigationContentStyle" TargetType="ContentControl">
             <Setter Property="ContentTemplate" Value="{StaticResource HomeViewTemplate}"/>

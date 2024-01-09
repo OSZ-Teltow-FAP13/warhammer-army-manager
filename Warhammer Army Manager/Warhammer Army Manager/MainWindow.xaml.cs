@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,9 @@ namespace Warhammer_Army_Manager
             InitializeComponent();
 
             MainWindowViewModel.Name = "Mark";
+
+
+            MessageBox.Show($"DB: {File.Exists("WAMData.db")}");
         }
 
         private void ButtonMain_Click(object sender, RoutedEventArgs e)
