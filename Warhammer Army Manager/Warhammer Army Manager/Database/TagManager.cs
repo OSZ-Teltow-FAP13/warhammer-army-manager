@@ -5,32 +5,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Warhammer_Army_Manager.Database.Models;
 
-namespace Warhammer_Army_Manager.Models
+namespace Warhammer_Army_Manager.Database
 {
     class TagManager
     {
-        public static ObservableCollection<Tag> Tags { get; set; } = new();
+        public static ObservableCollection<Keywords> Keywords { get; set; } = new();
 
-        public static ObservableCollection<Tag> GetTags()
+        public static ObservableCollection<Keywords> GetKeywords()
         {
             using (var context = new ApplicationDbContext())
             {
-                foreach (Tag t in context.Tags.ToList())
+                foreach (Keywords t in context.Keywords.ToList())
                 {
-                    Tags.Add(t);
+                    Keywords.Add(t);
                 }
             }
 
-            return Tags;
+            return Keywords;
         }
-        public static void AddTags(Tag tag)
+        public static void AddKeywords(Keywords keywords)
         {
             using (var context = new ApplicationDbContext())
             {
-                Tags.Add(tag);
+                Keywords.Add(keywords);
                 
-                context.Tags.Add(tag);
+                context.Keywords.Add(keywords);
                 context.SaveChanges();
 
             }

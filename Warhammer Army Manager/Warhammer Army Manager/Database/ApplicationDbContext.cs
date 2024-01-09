@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Warhammer_Army_Manager.Database.Models;
 
 namespace Warhammer_Army_Manager.Database
 {
@@ -29,6 +30,10 @@ namespace Warhammer_Army_Manager.Database
             optionsBuilder.UseSqlite("Data Source = WAMData.db");
         }
 
+        public DbSet<Unit> Units { get; set; }
+        public DbSet<Keywords> Keywords { get; set; }
+        public DbSet<Keywords> Weapons { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -37,18 +42,37 @@ namespace Warhammer_Army_Manager.Database
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
-                entity.Property(e => e.Description);
-                entity.Property(e => e.Health);
-                entity.Property(e => e.Courage);
-                entity.Property(e => e.Protection);
-                entity.HasMany(d => d.Tag);
+                entity.Property(e => e.Wounds);
+                entity.Property(e => e.Bravery);
+                entity.Property(e => e.Save);
+                entity.Property(e => e.Points);
             });
 
-            modelBuilder.Entity<Tag>(entity =>
+            modelBuilder.Entity<Keywords>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Keyword);
+            });
+
+            modelBuilder.Entity<Weapons>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Type).IsRequired();
+                entity.Property(e => e.Name);
+                entity.Property(e => e.Range);
+                entity.Property(e => e.Attacks);
+                entity.Property(e => e.ToHit);
+                entity.Property(e => e.ToWound);
+                entity.Property(e => e.Rend);
+                entity.Property(e => e.Damage);
+                entity.Property(e => e.SpecialEffect);
+            });
+
+            modelBuilder.Entity<Armys>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
-                entity.Property(e => e.Slug).IsRequired();
+                entity.Property(e => e.Points);
             });
         }
     }
