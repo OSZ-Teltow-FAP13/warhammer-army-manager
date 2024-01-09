@@ -11,7 +11,7 @@ using Warhammer_Army_Manager.Database;
 namespace Warhammer_Army_Manager.Migrations
 {
     [DbContext(typeof(UnitDbContext))]
-    [Migration("20240108170916_UnitMigration")]
+    [Migration("20240109063608_UnitMigration")]
     partial class UnitMigration
     {
         /// <inheritdoc />
@@ -50,6 +50,25 @@ namespace Warhammer_Army_Manager.Migrations
                     b.ToTable("UnitWeapons");
                 });
 
+            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Army", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Army");
+                });
+
             modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Keywords", b =>
                 {
                     b.Property<int>("Id")
@@ -70,6 +89,9 @@ namespace Warhammer_Army_Manager.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ArmyId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Bravery")
@@ -95,6 +117,8 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ArmyId");
 
                     b.ToTable("Units");
                 });
@@ -177,6 +201,18 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasForeignKey("WeaponsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Unit", b =>
+                {
+                    b.HasOne("Warhammer_Army_Manager.Database.Models.Army", null)
+                        .WithMany("Units")
+                        .HasForeignKey("ArmyId");
+                });
+
+            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Army", b =>
+                {
+                    b.Navigation("Units");
                 });
 #pragma warning restore 612, 618
         }
