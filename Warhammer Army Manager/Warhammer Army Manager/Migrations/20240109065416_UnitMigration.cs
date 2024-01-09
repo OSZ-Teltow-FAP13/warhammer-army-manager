@@ -11,7 +11,7 @@ namespace Warhammer_Army_Manager.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Army",
+                name: "Armys",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -21,7 +21,7 @@ namespace Warhammer_Army_Manager.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Army", x => x.Id);
+                    table.PrimaryKey("PK_Armys", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,6 +35,24 @@ namespace Warhammer_Army_Manager.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Keywords", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Units",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Wounds = table.Column<int>(type: "INTEGER", nullable: false),
+                    Move = table.Column<int>(type: "INTEGER", nullable: false),
+                    Bravery = table.Column<int>(type: "INTEGER", nullable: false),
+                    Save = table.Column<string>(type: "TEXT", maxLength: 2, nullable: false),
+                    Points = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Units", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,27 +77,27 @@ namespace Warhammer_Army_Manager.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Units",
+                name: "ArmysUnit",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Wounds = table.Column<int>(type: "INTEGER", nullable: false),
-                    Move = table.Column<int>(type: "INTEGER", nullable: false),
-                    Bravery = table.Column<int>(type: "INTEGER", nullable: false),
-                    Save = table.Column<string>(type: "TEXT", maxLength: 2, nullable: false),
-                    Points = table.Column<int>(type: "INTEGER", nullable: false),
-                    ArmyId = table.Column<int>(type: "INTEGER", nullable: true)
+                    ArmysId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UnitsId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Units", x => x.Id);
+                    table.PrimaryKey("PK_ArmysUnit", x => new { x.ArmysId, x.UnitsId });
                     table.ForeignKey(
-                        name: "FK_Units_Army_ArmyId",
-                        column: x => x.ArmyId,
-                        principalTable: "Army",
-                        principalColumn: "Id");
+                        name: "FK_ArmysUnit_Armys_ArmysId",
+                        column: x => x.ArmysId,
+                        principalTable: "Armys",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ArmysUnit_Units_UnitsId",
+                        column: x => x.UnitsId,
+                        principalTable: "Units",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -131,14 +149,14 @@ namespace Warhammer_Army_Manager.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_KeywordsUnit_UnitsId",
-                table: "KeywordsUnit",
+                name: "IX_ArmysUnit_UnitsId",
+                table: "ArmysUnit",
                 column: "UnitsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Units_ArmyId",
-                table: "Units",
-                column: "ArmyId");
+                name: "IX_KeywordsUnit_UnitsId",
+                table: "KeywordsUnit",
+                column: "UnitsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UnitWeapons_WeaponsId",
@@ -150,10 +168,16 @@ namespace Warhammer_Army_Manager.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "ArmysUnit");
+
+            migrationBuilder.DropTable(
                 name: "KeywordsUnit");
 
             migrationBuilder.DropTable(
                 name: "UnitWeapons");
+
+            migrationBuilder.DropTable(
+                name: "Armys");
 
             migrationBuilder.DropTable(
                 name: "Keywords");
@@ -163,9 +187,6 @@ namespace Warhammer_Army_Manager.Migrations
 
             migrationBuilder.DropTable(
                 name: "Weapons");
-
-            migrationBuilder.DropTable(
-                name: "Army");
         }
     }
 }

@@ -11,7 +11,7 @@ using Warhammer_Army_Manager.Database;
 namespace Warhammer_Army_Manager.Migrations
 {
     [DbContext(typeof(UnitDbContext))]
-    [Migration("20240109063608_UnitMigration")]
+    [Migration("20240109065416_UnitMigration")]
     partial class UnitMigration
     {
         /// <inheritdoc />
@@ -19,6 +19,21 @@ namespace Warhammer_Army_Manager.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
+
+            modelBuilder.Entity("ArmysUnit", b =>
+                {
+                    b.Property<int>("ArmysId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UnitsId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ArmysId", "UnitsId");
+
+                    b.HasIndex("UnitsId");
+
+                    b.ToTable("ArmysUnit");
+                });
 
             modelBuilder.Entity("KeywordsUnit", b =>
                 {
@@ -50,7 +65,7 @@ namespace Warhammer_Army_Manager.Migrations
                     b.ToTable("UnitWeapons");
                 });
 
-            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Army", b =>
+            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Armys", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +81,7 @@ namespace Warhammer_Army_Manager.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Army");
+                    b.ToTable("Armys");
                 });
 
             modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Keywords", b =>
@@ -89,9 +104,6 @@ namespace Warhammer_Army_Manager.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("ArmyId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Bravery")
@@ -117,8 +129,6 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ArmyId");
 
                     b.ToTable("Units");
                 });
@@ -173,6 +183,21 @@ namespace Warhammer_Army_Manager.Migrations
                     b.ToTable("Weapons");
                 });
 
+            modelBuilder.Entity("ArmysUnit", b =>
+                {
+                    b.HasOne("Warhammer_Army_Manager.Database.Models.Armys", null)
+                        .WithMany()
+                        .HasForeignKey("ArmysId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Warhammer_Army_Manager.Database.Models.Unit", null)
+                        .WithMany()
+                        .HasForeignKey("UnitsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("KeywordsUnit", b =>
                 {
                     b.HasOne("Warhammer_Army_Manager.Database.Models.Keywords", null)
@@ -201,18 +226,6 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasForeignKey("WeaponsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Unit", b =>
-                {
-                    b.HasOne("Warhammer_Army_Manager.Database.Models.Army", null)
-                        .WithMany("Units")
-                        .HasForeignKey("ArmyId");
-                });
-
-            modelBuilder.Entity("Warhammer_Army_Manager.Database.Models.Army", b =>
-                {
-                    b.Navigation("Units");
                 });
 #pragma warning restore 612, 618
         }
