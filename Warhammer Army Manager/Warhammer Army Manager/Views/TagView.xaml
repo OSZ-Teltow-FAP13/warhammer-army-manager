@@ -22,45 +22,60 @@
                     ToolTip="add"
                     Margin="0,0,20,0"
                     Padding="20 7"
-                    Command="{Binding ShowWindowCommand}"/>
+                    Background="White"
+                    Command="{Binding ShowWindowCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
             <Button Content="Alle Löschen"
                     ToolTip="delete all"
                     Margin="0,0,20,0"
                     Padding="20 7"
-                    Click="DeleteAll"/>
+                    Background="White"
+                    Click="DeleteAll">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
 
-        <DataGrid Grid.Row="2"
-                  Name="DataGridTags"
+        <ListView Grid.Row="2"
+                  Name="TagList"
                   ItemsSource="{Binding Tags}"
-                  AutoGenerateColumns="False"
                   HorizontalAlignment="Left"
                   MaxHeight="400">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" 
-                                        Binding="{Binding Id}"
-                                        IsReadOnly="True"/>
-                <DataGridTextColumn Header="Name" 
-                                        Binding="{Binding Name}"
-                                        MinWidth="400"/>
-                <DataGridTextColumn Header="Slug"
-                                        Binding="{Binding Slug}"
-                                        MinWidth="200"/>
-
-                <DataGridTemplateColumn Header="Aktionen" IsReadOnly="True" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Click="Delete">
-                                    löschen
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-            </DataGrid.Columns>
-        </DataGrid>
-
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" 
+                                    DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" 
+                                    DisplayMemberBinding="{Binding Name}" 
+                                    Width="400"/>
+                    <GridViewColumn Header="Slug" 
+                                    DisplayMemberBinding="{Binding Slug}" 
+                                    Width="200"/>
+                    <GridViewColumn Header="Aktion" Width="Auto" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Click="Delete" FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="#FF4682B4">
+                                        <Button.Resources>
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="4"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </StackPanel>
 </UserControl>

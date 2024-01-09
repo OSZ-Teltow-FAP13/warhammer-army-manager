@@ -65,5 +65,10 @@ namespace Warhammer_Army_Manager
                 //throw;
             }
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

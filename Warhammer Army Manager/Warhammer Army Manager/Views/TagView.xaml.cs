@@ -31,16 +31,16 @@ namespace Warhammer_Army_Manager.Views
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-            if (DataGridTags.SelectedItem as Tag is null)
+            if (TagList.SelectedItem as Tag is null)
                 return;
 
             if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
                 return;
 
             using var context = new ApplicationDbContext();
-            context.Remove(context.Tags.Single(a => a.Id == (DataGridTags.SelectedItem as Tag)!.Id));
+            context.Remove(context.Tags.Single(a => a.Id == (TagList.SelectedItem as Tag)!.Id));
             context.SaveChanges();
-            DataGridTags.ItemsSource = context.Tags.ToList();
+            TagList.ItemsSource = context.Tags.ToList();
         }
 
         private void DeleteAll(object sender, RoutedEventArgs e)

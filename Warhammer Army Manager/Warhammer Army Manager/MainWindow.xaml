@@ -10,7 +10,7 @@
         Height="600" Width="920"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        ResizeMode="NoResize"
+        ResizeMode="CanResize"
         Background="Transparent"
         AllowsTransparency="True">
 
@@ -46,12 +46,14 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right"
                 Margin="0,10,10,0">
-                <Button Content="__"
+                <Button Content="&#xE921;"
+                        FontFamily="Segoe MDL2 Assets"
                         Foreground="White"
                         Style="{StaticResource WindowButtonTheme}"
                         Click="Minimize"
                         ToolTip="minimieren"/>
-                <Button Content="X"
+                <Button Content="&#xE711;"
+                        FontFamily="Segoe MDL2 Assets"
                         Foreground="Red"
                         Style="{StaticResource WindowButtonTheme}"
                         Click="Close"
@@ -95,7 +97,7 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding TagViewCommand}"/>
+                             Command="{Binding TagViewCommand}" Checked="RadioButton_Checked"/>
                 <RadioButton Content="About"
                              Height="50"
                              Foreground="White"
