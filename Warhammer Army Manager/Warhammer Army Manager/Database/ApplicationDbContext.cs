@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Warhammer_Army_Manager.Models
+namespace Warhammer_Army_Manager.Database
 {
     internal class ApplicationDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)   
         {
             /*
             MySQL Setup -- save for later

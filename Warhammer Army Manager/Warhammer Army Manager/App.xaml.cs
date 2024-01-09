@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Database;
+using Warhammer_Army_Manager.Database.Models;
 
 namespace Warhammer_Army_Manager
 {
@@ -28,17 +29,16 @@ namespace Warhammer_Army_Manager
             {
                 context.Database.EnsureCreated();
 
-                string unitName = "187 Pferde der Beflügelung";
+                string unitName = "TestBlubberDUmpfbacke";
                 if (!context.Units.Any(unit => unit.Name == unitName))
                 {
                     var unitHorses = new Unit
                     {
                         Name = unitName,
-                        Description = "Eines Tages waren 1337 Pferde auf der Weide am grasen. Dann kamen 69 Einhörnchen und spießten 1150 Pferde auf davon wurden 420 Pferde so verletzt das sie direkt drauf gingen. Die anderen 3.14 sind erst nach Stunden leiden verblutet. Die verbleibenden 187 Pferde kämpfen von nun an gegen die Einhörnchen. Die 8.589.869.056 ist die sechste vollkommene Zahl, 1588 von Cataldi entdeckt. Für weitere Detils: https://de.wikipedia.org/wiki/Liste_besonderer_Zahlen",
-                        Health = 10,
-                        Mobillity = 8,
-                        Courage = 9,
-                        Protection = 1,
+                        Wounds = 10,
+                        Move = 8,
+                        Bravery = 9,
+                        Save = "1+",
                     };
                     context.Units.Add(unitHorses);
                 }
