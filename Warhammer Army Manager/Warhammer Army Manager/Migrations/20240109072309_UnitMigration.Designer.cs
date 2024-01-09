@@ -11,7 +11,7 @@ using Warhammer_Army_Manager.Database;
 namespace Warhammer_Army_Manager.Migrations
 {
     [DbContext(typeof(UnitDbContext))]
-    [Migration("20240109065416_UnitMigration")]
+    [Migration("20240109072309_UnitMigration")]
     partial class UnitMigration
     {
         /// <inheritdoc />
@@ -145,7 +145,6 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Damage")
-                        .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("TEXT");
 
@@ -164,12 +163,10 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ToHit")
-                        .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ToWound")
-                        .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("TEXT");
 

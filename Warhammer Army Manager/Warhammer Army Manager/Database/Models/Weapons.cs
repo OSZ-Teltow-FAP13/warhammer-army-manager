@@ -20,13 +20,13 @@ namespace Warhammer_Army_Manager.Database.Models
         public int Range { get; set; }
         [MaxLength(5)]   
         public string Attacks { get; set; }
-        [Required,MaxLength(2)]
-        public string ToHit { get; set; }
-        [Required, MaxLength(2)]
-        public string ToWound { get; set; }
+        [MaxLength(2)]
+        public string? ToHit { get; set; }
+        [MaxLength(2)]
+        public string? ToWound { get; set; }
         public int? Rend { get; set; }
-        [Required, MaxLength(5)]
-        public string Damage { get; set; }
+        [MaxLength(5)]
+        public string? Damage { get; set; }
         public string? SpecialEffect { get; set; }
 
         public virtual ICollection<Unit> Units { get; private set; } = new ObservableCollection<Unit>();

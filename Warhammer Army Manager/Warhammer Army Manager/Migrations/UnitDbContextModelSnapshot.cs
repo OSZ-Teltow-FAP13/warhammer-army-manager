@@ -142,7 +142,6 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Damage")
-                        .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("TEXT");
 
@@ -161,12 +160,10 @@ namespace Warhammer_Army_Manager.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ToHit")
-                        .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ToWound")
-                        .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("TEXT");
 

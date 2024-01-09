@@ -65,10 +65,10 @@ namespace Warhammer_Army_Manager.Migrations
                     Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     Range = table.Column<int>(type: "INTEGER", nullable: false),
                     Attacks = table.Column<string>(type: "TEXT", maxLength: 5, nullable: false),
-                    ToHit = table.Column<string>(type: "TEXT", maxLength: 2, nullable: false),
-                    ToWound = table.Column<string>(type: "TEXT", maxLength: 2, nullable: false),
+                    ToHit = table.Column<string>(type: "TEXT", maxLength: 2, nullable: true),
+                    ToWound = table.Column<string>(type: "TEXT", maxLength: 2, nullable: true),
                     Rend = table.Column<int>(type: "INTEGER", nullable: true),
-                    Damage = table.Column<string>(type: "TEXT", maxLength: 5, nullable: false),
+                    Damage = table.Column<string>(type: "TEXT", maxLength: 5, nullable: true),
                     SpecialEffect = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
