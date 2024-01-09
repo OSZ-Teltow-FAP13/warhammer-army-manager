@@ -16,11 +16,11 @@ using Warhammer_Army_Manager.ViewModels;
 namespace Warhammer_Army_Manager.Views
 {
     /// <summary>
-    /// Interaktionslogik für TagAddView.xaml
+    /// Interaktionslogik für KeywordAddView.xaml
     /// </summary>
-    public partial class TagAddView : Window
+    public partial class KeywordAddView : Window
     {
-        public TagAddView()
+        public KeywordAddView()
         {
             InitializeComponent();
         }

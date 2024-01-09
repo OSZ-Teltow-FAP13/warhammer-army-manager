@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Warhammer_Army_Manager.Database.Models
 {
-    internal class Weapons
+    internal class Weapon
     {
         [Required]
         public int Id { get; set; }

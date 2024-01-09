@@ -9,15 +9,15 @@ using Warhammer_Army_Manager.Database.Models;
 
 namespace Warhammer_Army_Manager.Database
 {
-    class TagManager
+    class KeywordManager
     {
-        public static ObservableCollection<Keywords> Keywords { get; set; } = new();
+        public static ObservableCollection<Keyword> Keywords { get; set; } = new();
 
-        public static ObservableCollection<Keywords> GetKeywords()
+        public static ObservableCollection<Keyword> GetKeywords()
         {
             using (var context = new ApplicationDbContext())
             {
-                foreach (Keywords t in context.Keywords.ToList())
+                foreach (Keyword t in context.Keywords.ToList())
                 {
                     Keywords.Add(t);
                 }
@@ -25,7 +25,7 @@ namespace Warhammer_Army_Manager.Database
 
             return Keywords;
         }
-        public static void AddKeywords(Keywords keywords)
+        public static void AddKeywords(Keyword keywords)
         {
             using (var context = new ApplicationDbContext())
             {

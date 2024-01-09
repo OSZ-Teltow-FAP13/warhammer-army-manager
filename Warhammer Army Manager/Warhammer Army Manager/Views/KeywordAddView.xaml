@@ -1,9 +1,10 @@
-﻿<Window x:Class="Warhammer_Army_Manager.Views.TagAddView"
+﻿<Window x:Class="Warhammer_Army_Manager.Views.KeywordAddView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Warhammer_Army_Manager.Views" xmlns:viewmodels="clr-namespace:Warhammer_Army_Manager.ViewModels"
+        xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
+        xmlns:viewmodels="clr-namespace:Warhammer_Army_Manager.ViewModels"
         mc:Ignorable="d"
         Title="Add a tag" Height="450" Width="400">
     <Grid>

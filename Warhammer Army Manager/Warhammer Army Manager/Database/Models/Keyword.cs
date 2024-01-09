@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Warhammer_Army_Manager.Database.Models
 {
-    internal class Keywords
+    internal class Keyword
     { 
         [Required]
         public int Id { get; set; }
         [Required, MaxLength(100)]
-        public string? Keyword { get; set; }
+        public string? Name { get; set; }
         public virtual ICollection<Unit> Units { get; private set; } = new ObservableCollection<Unit>();
     }
 }

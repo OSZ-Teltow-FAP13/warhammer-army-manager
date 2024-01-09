@@ -5,22 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Warhammer_Army_Manager.ViewModels.Commands;
-using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Database.Models;
+using Warhammer_Army_Manager.Database;
 using System.Windows.Input;
 using System.Windows;
 using Warhammer_Army_Manager.Views;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
-    class TagViewModel : ViewModel
+    class KeywordViewModel : ViewModel
     {
-        public ObservableCollection<Tag> Tags { get; set; }
+        public ObservableCollection<Keyword> Keywords { get; set; }
 
         public RelayCommand ShowWindowCommand { get; set; }
 
-        public TagViewModel(TagAddView view)
+        public KeywordViewModel(KeywordAddView view)
         {
-            Tags = TagManager.GetTags();
+            Keywords = KeywordManager.GetKeywords();
 
             ShowWindowCommand = new RelayCommand(o =>
             {

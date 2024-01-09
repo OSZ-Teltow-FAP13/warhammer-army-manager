@@ -13,34 +13,35 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Database.Models;
+using Warhammer_Army_Manager.Database;
 using Warhammer_Army_Manager.ViewModels;
 
 namespace Warhammer_Army_Manager.Views
 {
     /// <summary>
-    /// Interaktionslogik für TagView.xaml
+    /// Interaktionslogik für KeywordView.xaml
     /// </summary>
-    public partial class TagView : UserControl
+    public partial class KeywordView : UserControl
     {
 
-        public TagView()
+        public KeywordView()
         {
             InitializeComponent();
         }
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-            if (DataGridTags.SelectedItem as Tag is null)
+            if (DataGridKeywords.SelectedItem as Keyword is null)
                 return;
 
             if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
                 return;
 
             using var context = new ApplicationDbContext();
-            context.Remove(context.Tags.Single(a => a.Id == (DataGridTags.SelectedItem as Tag)!.Id));
+            context.Remove(context.Keywords.Single(a => a.Id == (DataGridKeywords.SelectedItem as Keyword)!.Id));
             context.SaveChanges();
-            DataGridTags.ItemsSource = context.Tags.ToList();
+            DataGridKeywords.ItemsSource = context.Keywords.ToList();
         }
 
         private void DeleteAll(object sender, RoutedEventArgs e)

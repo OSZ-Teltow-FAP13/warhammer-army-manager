@@ -31,8 +31,8 @@ namespace Warhammer_Army_Manager.Database
         }
 
         public DbSet<Unit> Units { get; set; }
-        public DbSet<Keywords> Keywords { get; set; }
-        public DbSet<Keywords> Weapons { get; set; }
+        public DbSet<Keyword> Keywords { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -48,13 +48,13 @@ namespace Warhammer_Army_Manager.Database
                 entity.Property(e => e.Points);
             });
 
-            modelBuilder.Entity<Keywords>(entity =>
+            modelBuilder.Entity<Keyword>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Keyword);
+                entity.Property(e => e.Name);
             });
 
-            modelBuilder.Entity<Weapons>(entity =>
+            modelBuilder.Entity<Weapon>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Type).IsRequired();
@@ -68,7 +68,7 @@ namespace Warhammer_Army_Manager.Database
                 entity.Property(e => e.SpecialEffect);
             });
 
-            modelBuilder.Entity<Armys>(entity =>
+            modelBuilder.Entity<Army>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();

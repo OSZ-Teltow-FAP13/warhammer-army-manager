@@ -12,10 +12,10 @@
     <Compile Update="Views\DashboardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\TagAddView.xaml.cs">
+    <Compile Update="Views\KeywordAddView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\TagView.xaml.cs">
+    <Compile Update="Views\KeywordView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UnitView.xaml.cs">
@@ -44,10 +44,10 @@
     <Page Update="Views\DashboardView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\TagAddView.xaml">
+    <Page Update="Views\KeywordAddView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\TagView.xaml">
+    <Page Update="Views\KeywordView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UnitView.xaml">

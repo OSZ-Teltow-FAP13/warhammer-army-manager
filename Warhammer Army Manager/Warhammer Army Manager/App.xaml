@@ -30,12 +30,12 @@
                 <views:WeaponView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:TagViewModel}">
-                <views:TagView/>
+            <DataTemplate DataType="{x:Type viewModel:KeywordViewModel}">
+                <views:KeywordView/>
             </DataTemplate>
-            
-            <DataTemplate DataType="{x:Type viewModel:TagAddViewModel}">
-                <views:TagAddView/>
+
+            <DataTemplate DataType="{x:Type viewModel:KeywordAddViewModel}">
+                <views:KeywordAddView/>
             </DataTemplate>
 
         </ResourceDictionary>

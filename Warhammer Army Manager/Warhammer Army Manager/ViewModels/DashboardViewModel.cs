@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Database;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
@@ -54,10 +54,10 @@ namespace Warhammer_Army_Manager.ViewModels
         {
             using (var context = new ApplicationDbContext())
             {
-                ArmyCount = context.Tags.Count();
-                UnitCount = context.Tags.Count();
-                WeaponCount = context.Tags.Count();
-                TagCount = context.Tags.Count();
+                ArmyCount = context.Keywords.Count();
+                UnitCount = context.Keywords.Count();
+                WeaponCount = context.Keywords.Count();
+                TagCount = context.Keywords.Count();
             }
         }
 

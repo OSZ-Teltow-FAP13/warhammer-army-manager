@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Warhammer_Army_Manager.Database.Models
 {
-    internal class Armys
+    internal class Army
     {
         [Required]
         public int Id { get; set; }

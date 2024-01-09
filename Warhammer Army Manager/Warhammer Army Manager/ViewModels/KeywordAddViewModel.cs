@@ -4,27 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Warhammer_Army_Manager.Models;
+using Warhammer_Army_Manager.Database;
+using Warhammer_Army_Manager.Database.Models;
 using Warhammer_Army_Manager.Services;
 using Warhammer_Army_Manager.ViewModels.Commands;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
-    class TagAddViewModel : ViewModel
+    class KeywordAddViewModel : ViewModel
     {
-        public RelayCommand AddTagCommand { get; set; }
+        public RelayCommand AddViewCommand { get; set; }
 
         public string? Name { get; set; }
-        public string? Slug { get; set; }
 
-        public TagAddViewModel(DashboardViewModel vm)
+        public KeywordAddViewModel(DashboardViewModel vm)
         {
-            AddTagCommand = new RelayCommand(o =>
+            AddViewCommand = new RelayCommand(o =>
             {
-                TagManager.AddTags(new()
+                KeywordManager.AddKeywords(new()
                 {
-                    Name = Name,
-                    Slug = Slug
+                    Name = Name
                 });
 
                 vm.TagCount += 1;

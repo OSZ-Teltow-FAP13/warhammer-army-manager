@@ -24,9 +24,9 @@ namespace Warhammer_Army_Manager.Database.Models
         public string? Save { get; set; }
         public int Points { get; set; }
 
-        public virtual ICollection<Keywords> Keywords { get; private set; } = new ObservableCollection<Keywords>();
-        public virtual ICollection<Weapons> Weapons { get; private set; } = new ObservableCollection<Weapons>();
-        public virtual ICollection<Armys> Armys { get; private set; } = new ObservableCollection<Armys>();
+        public virtual ICollection<Keyword> Keywords { get; private set; } = new ObservableCollection<Keyword>();
+        public virtual ICollection<Weapon> Weapons { get; private set; } = new ObservableCollection<Weapon>();
+        public virtual ICollection<Army> Armys { get; private set; } = new ObservableCollection<Army>();
 
     }
 }

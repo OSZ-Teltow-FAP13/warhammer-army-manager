@@ -14,6 +14,7 @@ using Warhammer_Army_Manager.ViewModels;
 using Warhammer_Army_Manager.Views;
 using Warhammer_Army_Manager.Database;
 using Warhammer_Army_Manager.Database.Models;
+using System.Windows.Input;
 
 namespace Warhammer_Army_Manager
 {
@@ -39,11 +40,11 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<ArmyViewModel>();
             services.AddSingleton<UnitViewModel>();
             services.AddSingleton<WeaponViewModel>();
-            services.AddSingleton<TagViewModel>();
-            services.AddSingleton<TagAddViewModel>();
-            services.AddSingleton<TagAddView>(provider => new TagAddView()
+            services.AddSingleton<KeywordViewModel>();
+            services.AddSingleton<KeywordAddViewModel>();
+            services.AddSingleton<KeywordAddView>(provider => new KeywordAddView()
             {
-                DataContext = provider.GetRequiredService<TagAddViewModel>()
+                DataContext = provider.GetRequiredService<KeywordAddViewModel>()
             });
 
 
@@ -86,14 +87,13 @@ namespace Warhammer_Army_Manager
                     context.Units.Add(unitHorses);
                 }
 
-                if (!context.Tags.Any(tag => tag.Name == "Tag01"))
+                if (!context.Keywords.Any(keyword => keyword.Name == "Tag01"))
                 {
-                    var tagTest = new Tag
+                    var tagTest = new Keyword
                     {
-                        Name = "Tag01",
-                        Slug = "tag-01"
+                        Name = "TestKeywordAKATagROFLOL"
                     };
-                    context.Tags.Add(tagTest);
+                    context.Keywords.Add(tagTest);
                 }
 
                 context.SaveChanges();
