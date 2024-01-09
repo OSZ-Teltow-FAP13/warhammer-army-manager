@@ -67,7 +67,7 @@ namespace Warhammer_Army_Manager.Migrations
                     Attacks = table.Column<string>(type: "TEXT", maxLength: 5, nullable: false),
                     ToHit = table.Column<string>(type: "TEXT", maxLength: 2, nullable: true),
                     ToWound = table.Column<string>(type: "TEXT", maxLength: 2, nullable: true),
-                    Rend = table.Column<int>(type: "INTEGER", nullable: true),
+                    Rend = table.Column<string>(type: "TEXT", nullable: true),
                     Damage = table.Column<string>(type: "TEXT", maxLength: 5, nullable: true),
                     SpecialEffect = table.Column<string>(type: "TEXT", nullable: true)
                 },
