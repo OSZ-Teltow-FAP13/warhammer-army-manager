@@ -34,9 +34,25 @@
                 </Border.Clip>
 
                 <Grid>
-                    <Image Width="100"
-                       Source="/Resources/army-manager-white.png"
-                       Margin="0,0,0,25"/>
+                    <Button Content="Armee erstellen"
+                            MaxWidth="200"
+                            MaxHeight="100"
+                            BorderThickness="0"
+                            Foreground="White"
+                            Cursor="Hand"
+                            FontSize="18">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="15"></Setter>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#3aa0ff" Offset="0.0"/>
+                                <GradientStop Color="#5bc3ff" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </Grid>
             </Border>
 
@@ -135,7 +151,7 @@
                                    FontSize="22"
                                    Margin="20,10,10,0"/>
                         <Grid>
-                            <TextBlock Text="{Binding TagCount}"
+                            <TextBlock Text="{Binding KeywordCount}"
                                        FontSize="18"
                                        Margin="0,20,0,20"
                                        VerticalAlignment="Center"

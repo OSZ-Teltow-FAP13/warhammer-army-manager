@@ -56,7 +56,9 @@ namespace Warhammer_Army_Manager
 
             _serviceProvider = services.BuildServiceProvider();
 
+            /* save for later
             addSampleData();
+            */
         }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -69,6 +71,7 @@ namespace Warhammer_Army_Manager
 
         private static void addSampleData()
         {
+
             using (var context = new ApplicationDbContext())
             {
                 context.Database.EnsureCreated();

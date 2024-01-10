@@ -10,6 +10,10 @@
     <StartupObject></StartupObject>
     <IsPublishable>True</IsPublishable>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <Title>Warhammer Army Manager</Title>
+    <Version>1.0.0</Version>
+	<AssemblyVersion>1.0.*</AssemblyVersion>
+	<Deterministic>false</Deterministic>
   </PropertyGroup>
 
   <ItemGroup>

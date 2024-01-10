@@ -30,9 +30,10 @@ namespace Warhammer_Army_Manager.Database
             optionsBuilder.UseSqlite("Data Source = WAMData.db");
         }
 
+        public DbSet<Army> Army { get; set; }
         public DbSet<Unit> Units { get; set; }
-        public DbSet<Keyword> Keywords { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
+        public DbSet<Keyword> Keywords { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

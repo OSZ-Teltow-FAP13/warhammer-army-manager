@@ -96,12 +96,10 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding TagViewCommand}"/>
-                <RadioButton Content="About"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Margin="0, 160,0,0"/>
+                <TextBlock Text="{Binding Version}"
+                           Margin="10,200,0,0"
+                           Foreground="#777" />
+
             </StackPanel>
 
             <ContentControl Grid.Row="1"
