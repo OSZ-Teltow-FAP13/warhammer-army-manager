@@ -7,15 +7,23 @@
         xmlns:viewModel="clr-namespace:Warhammer_Army_Manager.ViewModels"
         mc:Ignorable="d"
         Title="Warhammer Army Manager"
-        Height="600" Width="920"
+        Height="610" Width="930"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="CanResize"
         Background="Transparent"
         AllowsTransparency="True">
-
+    
     <Border Background="#272537"
-            CornerRadius="15">
+            CornerRadius="15"
+            Margin="10">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" 
+                              Direction="-90"
+                              RenderingBias="Quality" 
+                              ShadowDepth="2"
+                              Opacity=".5"/>
+        </Border.Effect>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
@@ -97,7 +105,7 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding TagViewCommand}" Checked="RadioButton_Checked"/>
+                             Command="{Binding TagViewCommand}"/>
                 <RadioButton Content="About"
                              Height="50"
                              Foreground="White"
