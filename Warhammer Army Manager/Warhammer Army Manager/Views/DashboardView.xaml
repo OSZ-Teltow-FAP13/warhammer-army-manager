@@ -7,7 +7,7 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:vm="clr-namespace:Warhammer_Army_Manager.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <StackPanel>
         <TextBlock Text="Dashboard"
                    Foreground="White"
@@ -93,14 +93,14 @@
                         CornerRadius="10"
                         Margin="0">
                     <StackPanel>
-                        <TextBlock Text="Anzahl &#x0a;Armeen"
+                        <TextBlock Text="Anzahl&#x0a;Armeen"
                                    Foreground="White"
-                                   FontSize="22"
+                                   FontSize="15"
                                    Margin="20,10,10,0"/>
                         <Grid>
                             <TextBlock Text="{Binding ArmyCount}"
                                        Foreground="White"
-                                       FontSize="18"
+                                       FontSize="24"
                                        Margin="0,20,0,20"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"/>
@@ -115,12 +115,12 @@
                     <StackPanel>
                         <TextBlock Text="Anzahl &#x0a;Einheiten"
                                    Foreground="White"
-                                   FontSize="22"
+                                   FontSize="15"
                                    Margin="20,10,10,0"/>
                         <Grid>
                             <TextBlock Text="{Binding UnitCount}"
                                        Foreground="White"
-                                       FontSize="18"
+                                       FontSize="24"
                                        Margin="0,20,0,20"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"/>
@@ -130,20 +130,32 @@
 
                 <Border Width="150"
                         Height="150"
-                        Background="#FF53FF4E"
-                        CornerRadius="10">
+                        Background="#32cc8c">
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                    </Border.Clip>
                     <StackPanel>
                         <TextBlock Text="Anzahl &#x0a;Waffen"
                                    Foreground="White"
-                                   FontSize="22"
+                                   FontSize="15"
                                    Margin="20,10,10,0"/>
                         <Grid>
                             <TextBlock Text="{Binding WeaponCount}"
                                        Foreground="White"
-                                       FontSize="18"
+                                       FontSize="24"
                                        Margin="0,20,0,20"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"/>
+                            <Image Source="/Resources/w40k-50cal.png" RenderTransformOrigin="0.5,0.5" Margin="-7,48,7,-48">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-10.332"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
                         </Grid>
                     </StackPanel>
                 </Border>
@@ -154,11 +166,11 @@
                         CornerRadius="10">
                     <StackPanel>
                         <TextBlock Text="Anzahl &#x0a;Tags"
-                                   FontSize="22"
+                                   FontSize="15"
                                    Margin="20,10,10,0"/>
                         <Grid>
                             <TextBlock Text="{Binding KeywordCount}"
-                                       FontSize="18"
+                                       FontSize="24"
                                        Margin="0,20,0,20"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"/>
