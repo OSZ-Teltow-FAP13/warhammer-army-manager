@@ -7,7 +7,6 @@
              xmlns:viewModel="clr-namespace:Warhammer_Army_Manager.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
     <StackPanel>
 
         <TextBlock Text="Schlüsselwörter"
@@ -32,7 +31,7 @@
 
         <DataGrid Grid.Row="2"
                   Name="DataGridKeywords"
-                  ItemsSource="{Binding Tags}"
+                  ItemsSource="{Binding Keywords}"
                   AutoGenerateColumns="False"
                   HorizontalAlignment="Left"
                   MaxHeight="400">
@@ -43,15 +42,12 @@
                 <DataGridTextColumn Header="Name" 
                                         Binding="{Binding Name}"
                                         MinWidth="400"/>
-                <DataGridTextColumn Header="Slug"
-                                        Binding="{Binding Slug}"
-                                        MinWidth="200"/>
 
                 <DataGridTemplateColumn Header="Aktionen" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Click="Delete">
+                                <Button Command="{Binding DeleteCommand}">
                                     löschen
                                 </Button>
                             </StackPanel>

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Warhammer_Army_Manager.Services;
 using Warhammer_Army_Manager.Database.Models;
-using Warhammer_Army_Manager.ViewModels.Commands;
+using Warhammer_Army_Manager.Commands;
 
 namespace Warhammer_Army_Manager.ViewModels
 {

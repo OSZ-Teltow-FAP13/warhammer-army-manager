@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Warhammer_Army_Manager.ViewModels.Commands;
+using Warhammer_Army_Manager.Commands;
 using Warhammer_Army_Manager.Database.Models;
 using Warhammer_Army_Manager.Database;
 using System.Windows.Input;

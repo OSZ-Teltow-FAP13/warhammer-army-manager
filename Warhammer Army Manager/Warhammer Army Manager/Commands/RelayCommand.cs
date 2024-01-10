@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Warhammer_Army_Manager.ViewModels.Commands
+namespace Warhammer_Army_Manager.Commands
 {
     internal class RelayCommand : ICommand
     {
