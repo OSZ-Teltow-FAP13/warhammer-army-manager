@@ -32,16 +32,16 @@ namespace Warhammer_Army_Manager.Views
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-            if (DataGridKeywords.SelectedItem as Keyword is null)
+            if (KeywordList.SelectedItem as Keyword is null)
                 return;
 
             if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
                 return;
 
             using var context = new ApplicationDbContext();
-            context.Remove(context.Keywords.Single(a => a.Id == (DataGridKeywords.SelectedItem as Keyword)!.Id));
+            context.Remove(context.Keywords.Single(a => a.Id == (KeywordList.SelectedItem as Keyword)!.Id));
             context.SaveChanges();
-            DataGridKeywords.ItemsSource = context.Keywords.ToList();
+            KeywordList.ItemsSource = context.Keywords.ToList();
         }
 
         private void DeleteAll(object sender, RoutedEventArgs e)
