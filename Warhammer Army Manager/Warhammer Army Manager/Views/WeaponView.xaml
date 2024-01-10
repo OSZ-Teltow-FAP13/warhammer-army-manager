@@ -18,7 +18,10 @@
           Name="KeywordList"
           ItemsSource="{Binding Weapons}"
           HorizontalAlignment="Left"
-          MaxHeight="400">
+          MaxHeight="400"
+          Background="White"
+          BorderBrush="Transparent" 
+          BorderThickness="0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID"
@@ -52,6 +55,11 @@
                                     Width="150"/>
                 </GridView>
             </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Height" Value="30"/>
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
     </StackPanel>
 </UserControl>

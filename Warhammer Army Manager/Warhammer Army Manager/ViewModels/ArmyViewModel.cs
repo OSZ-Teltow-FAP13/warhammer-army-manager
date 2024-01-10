@@ -13,6 +13,18 @@ namespace Warhammer_Army_Manager.ViewModels
 {
     class ArmyViewModel : ViewModel
     {
-        public ObservableCollection<Army> Armies { get; set; }
+        public ObservableCollection<Army> Armys { get; set; }
+
+        public ArmyViewModel()
+        {
+            Armys = new ObservableCollection<Army>();
+            using (var context = new ApplicationDbContext())
+            {
+                foreach (Army t in context.Armys.ToList())
+                {
+                    Armys.Add(t);
+                }
+            }
+        }
     }
 }

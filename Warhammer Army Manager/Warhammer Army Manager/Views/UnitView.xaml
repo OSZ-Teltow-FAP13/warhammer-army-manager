@@ -34,30 +34,47 @@
               Name="KeywordList"
               ItemsSource="{Binding Units}"
               HorizontalAlignment="Left"
-              MaxHeight="400" >
+              MaxHeight="400"
+              Background="White"
+              BorderBrush="Transparent" 
+              BorderThickness="0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" 
                                 DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Name" 
                                 DisplayMemberBinding="{Binding Name}" 
-                                Width="330"/>
+                                Width="300"/>
                     <GridViewColumn Header="Wounds" 
                                 DisplayMemberBinding="{Binding Wounds}" 
-                                Width="72"/>
+                                Width="70"/>
                     <GridViewColumn Header="Move" 
                                 DisplayMemberBinding="{Binding Move}" 
-                                Width="72"/>
+                                Width="70"/>
                     <GridViewColumn Header="Bravery" 
                                 DisplayMemberBinding="{Binding Bravery}" 
-                                Width="72"/>
+                                Width="70"/>
                     <GridViewColumn Header="Save" 
                                 DisplayMemberBinding="{Binding Save}" 
-                                Width="72"/>
+                                Width="70"/>
                     <GridViewColumn Header="Points" 
                                 DisplayMemberBinding="{Binding Points}" 
-                                Width="72"/>
-
+                                Width="70"/>
+                    <GridViewColumn Header="Aktion" Width="40" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="#FF4682B4">
+                                        <Button.Resources>
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="4"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
