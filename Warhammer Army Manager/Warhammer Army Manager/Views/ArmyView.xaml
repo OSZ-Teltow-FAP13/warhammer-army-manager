@@ -15,13 +15,13 @@
                Margin="0,0,0,20"/>
 
         <StackPanel Orientation="Horizontal"
-                Margin="0,0,0,20">
+             Margin="0,0,0,20">
             <Button Content="Hinzufügen"
-                ToolTip="add"
-                Margin="0,0,20,0"
-                Padding="20 7"
-                Background="White"
-                Command="{Binding ShowWindowCommand}">
+                    ToolTip="add"
+                    Margin="0,0,20,0"
+                    Padding="20 7"
+                    Background="White"
+                    Command="{Binding ShowWindowCommand}">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -29,6 +29,8 @@
                 </Button.Resources>
             </Button>
         </StackPanel>
+
+
 
         <ListView Grid.Row="2"
               Name="KeywordList"

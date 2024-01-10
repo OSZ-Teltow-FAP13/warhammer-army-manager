@@ -14,4 +14,6 @@ namespace Warhammer_Army_Manager.ViewModels
     {
         public ObservableCollection<Weapon> Weapons { get; set; }
     }
+
+   
 }

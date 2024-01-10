@@ -11,5 +11,7 @@ namespace Warhammer_Army_Manager.ViewModels
     class UnitViewModel : ViewModel
     {
         public ObservableCollection<Unit> Units { get; set; }
+
+
     }
 }
