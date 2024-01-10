@@ -21,6 +21,7 @@ namespace Warhammer_Army_Manager.ViewModels
         public string Version { get; set; }
         public RelayCommand DashboardViewCommand { get; set; }
         public RelayCommand ArmyViewCommand { get; set; }
+        public RelayCommand ArmyAddViewCommand { get; set; }
         public RelayCommand UnitViewCommand { get; set; }
         public RelayCommand WeaponViewCommand { get; set; }
         public RelayCommand TagViewCommand { get; set; }
@@ -52,6 +53,11 @@ namespace Warhammer_Army_Manager.ViewModels
             ArmyViewCommand = new RelayCommand(o =>
             {
                 Navigation.NavigateTo<ArmyViewModel>();
+            });
+
+            ArmyAddViewCommand = new RelayCommand(o =>
+            {
+                Navigation.NavigateTo<ArmyAddViewModel>();
             });
 
             UnitViewCommand = new RelayCommand(o =>

@@ -38,6 +38,7 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<MainWindowViewModel>();
             services.AddSingleton<DashboardViewModel>();
             services.AddSingleton<ArmyViewModel>();
+            services.AddSingleton<ArmyAddViewModel>();
             services.AddSingleton<UnitViewModel>();
             services.AddSingleton<WeaponViewModel>();
             services.AddSingleton<KeywordViewModel>();

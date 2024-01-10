@@ -20,6 +20,7 @@
   <ItemGroup>
     <None Remove="Resources\army-manager-black.png" />
     <None Remove="Resources\army-manager-white.png" />
+    <None Remove="Resources\unit01.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +46,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\army-manager-white.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\unit01.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
