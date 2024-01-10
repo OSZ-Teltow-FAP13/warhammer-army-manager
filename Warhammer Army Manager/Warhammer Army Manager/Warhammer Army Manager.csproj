@@ -35,12 +35,4 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="C:\Users\MaxM\Desktop\ViREQ Ausbildung\Projekte\warhammer-army-manager\Warhammer Army Manager\Warhammer Army Manager\.editorconfig" />
-  </ItemGroup>
-
 </Project>
