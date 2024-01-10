@@ -47,15 +47,19 @@
                   Name="KeywordList"
                   ItemsSource="{Binding Keywords}"
                   HorizontalAlignment="Left"
-                  MaxHeight="400">
+                  MaxHeight="400"
+                  Background="White"
+                  BorderBrush="Transparent" 
+                  BorderThickness="0">
+            
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" 
                                     DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Name" 
                                     DisplayMemberBinding="{Binding Name}" 
-                                    Width="400"/>
-                    <GridViewColumn Header="Aktion" Width="Auto" >
+                                    Width="650"/>
+                    <GridViewColumn Header="Aktion" Width="40" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">

@@ -6,11 +6,47 @@
              xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <StackPanel>
+
         <TextBlock Text="Armeen"
-           Foreground="White"
-           FontSize="28"
-           HorizontalAlignment="Left"
-           Margin="0,0,0,20"/>
-    </Grid>
+               Foreground="White"
+               FontSize="28"
+               HorizontalAlignment="Left"
+               Margin="0,0,0,20"/>
+
+        <StackPanel Orientation="Horizontal"
+                Margin="0,0,0,20">
+            <Button Content="Hinzufügen"
+                ToolTip="add"
+                Margin="0,0,20,0"
+                Padding="20 7"
+                Background="White"
+                Command="{Binding ShowWindowCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+        <ListView Grid.Row="2"
+              Name="KeywordList"
+              ItemsSource="{Binding Armies}"
+              HorizontalAlignment="Left"
+              MaxHeight="400" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" 
+                                DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" 
+                                DisplayMemberBinding="{Binding Name}" 
+                                Width="630"/>
+                    <GridViewColumn Header="Points" 
+                                DisplayMemberBinding="{Binding Points}" 
+                                Width="60"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
 </UserControl>

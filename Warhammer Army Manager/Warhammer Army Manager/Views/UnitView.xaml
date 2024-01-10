@@ -6,12 +6,44 @@
              xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <StackPanel>
+
         <TextBlock Text="Einheiten"
-           Foreground="White"
-           FontSize="28"
-           HorizontalAlignment="Left"
-           Margin="0,0,0,20"/>
-            
-    </Grid>
+               Foreground="White"
+               FontSize="28"
+               HorizontalAlignment="Left"
+               Margin="0,0,0,20"/>
+
+        <ListView Grid.Row="2"
+              Name="KeywordList"
+              ItemsSource="{Binding Units}"
+              HorizontalAlignment="Left"
+              MaxHeight="400" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" 
+                                DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" 
+                                DisplayMemberBinding="{Binding Name}" 
+                                Width="330"/>
+                    <GridViewColumn Header="Wounds" 
+                                DisplayMemberBinding="{Binding Wounds}" 
+                                Width="72"/>
+                    <GridViewColumn Header="Move" 
+                                DisplayMemberBinding="{Binding Move}" 
+                                Width="72"/>
+                    <GridViewColumn Header="Bravery" 
+                                DisplayMemberBinding="{Binding Bravery}" 
+                                Width="72"/>
+                    <GridViewColumn Header="Save" 
+                                DisplayMemberBinding="{Binding Save}" 
+                                Width="72"/>
+                    <GridViewColumn Header="Points" 
+                                DisplayMemberBinding="{Binding Points}" 
+                                Width="72"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
 </UserControl>
