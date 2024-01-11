@@ -26,7 +26,7 @@ namespace Warhammer_Army_Manager.ViewModels
                     Name = Name
                 });
 
-                vm.TagCount += 1;
+                vm.KeywordCount += 1;
             });
 
         }

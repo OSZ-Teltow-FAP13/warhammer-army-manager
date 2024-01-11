@@ -82,6 +82,12 @@
                              Style="{StaticResource MenuButtonTheme}"
                              IsChecked="True"
                              Command="{Binding DashboardViewCommand}"/>
+                <RadioButton Content="Armee aufstellen"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ArmyAddViewCommand}"/>
                 <RadioButton Content="Armeen"
                              Height="50"
                              Foreground="White"
@@ -106,12 +112,14 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding TagViewCommand}"/>
-                <RadioButton Content="About"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Margin="0, 160,0,0"/>
+                <TextBlock Margin="10,80,0,10"
+                           Foreground="#444" >
+                    Von: <LineBreak /> Marc Bonneß <LineBreak /> Maximilian Mewes <LineBreak /> Marian Buhle
+                </TextBlock>
+                <TextBlock Text="{Binding Version}"
+                           Foreground="#666"
+                           Margin="10,0,0,0"/>
+
             </StackPanel>
 
             <ContentControl Grid.Row="1"

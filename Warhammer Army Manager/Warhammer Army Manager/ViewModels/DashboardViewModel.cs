@@ -12,7 +12,7 @@ namespace Warhammer_Army_Manager.ViewModels
         private int _armyCount;
         private int _unitCount;
         private int _weaponCount;
-        private int _tagCount;
+        private int _keywordCount;
         public int ArmyCount
         {
             get => _armyCount;
@@ -40,12 +40,12 @@ namespace Warhammer_Army_Manager.ViewModels
                 OnPropertyChanged();
             }
         }
-        public int TagCount
+        public int KeywordCount
         {
-            get => _tagCount;
+            get => _keywordCount;
             set
             {
-                _tagCount = value;
+                _keywordCount = value;
                 OnPropertyChanged();
             }
         }
@@ -54,10 +54,10 @@ namespace Warhammer_Army_Manager.ViewModels
         {
             using (var context = new ApplicationDbContext())
             {
-                ArmyCount = context.Keywords.Count();
-                UnitCount = context.Keywords.Count();
-                WeaponCount = context.Keywords.Count();
-                TagCount = context.Keywords.Count();
+                ArmyCount = context.Army.Count();
+                UnitCount = context.Units.Count();
+                WeaponCount = context.Weapons.Count();
+                KeywordCount = context.Keywords.Count();
             }
         }
 
