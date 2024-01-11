@@ -29,16 +29,16 @@ namespace Warhammer_Army_Manager.Views
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-            if (UnitList.SelectedItem as Unit is null)
+            if (UnitListView.SelectedItem as Unit is null)
                 return;
 
             if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
                 return;
 
             using var context = new ApplicationDbContext();
-            context.Remove(context.Units.Single(a => a.Id == (UnitList.SelectedItem as Unit)!.Id));
+            context.Remove(context.Units.Single(a => a.Id == (UnitListView.SelectedItem as Unit)!.Id));
             context.SaveChanges();
-            UnitList.ItemsSource = context.Units.ToList();
+            UnitListView.ItemsSource = context.Units.ToList();
         }
     }
 }

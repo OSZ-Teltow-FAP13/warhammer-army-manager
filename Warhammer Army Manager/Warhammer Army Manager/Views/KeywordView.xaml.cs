@@ -32,16 +32,16 @@ namespace Warhammer_Army_Manager.Views
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-            if (KeywordList.SelectedItem as Keyword is null)
+            if (KeywordListView.SelectedItem as Keyword is null)
                 return;
 
             if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
                 return;
 
             using var context = new ApplicationDbContext();
-            context.Remove(context.Keywords.Single(a => a.Id == (KeywordList.SelectedItem as Keyword)!.Id));
+            context.Remove(context.Keywords.Single(a => a.Id == (KeywordListView.SelectedItem as Keyword)!.Id));
             context.SaveChanges();
-            KeywordList.ItemsSource = context.Keywords.ToList();
+            KeywordListView.ItemsSource = context.Keywords.ToList();
         }
 
         private void DeleteAll(object sender, RoutedEventArgs e)

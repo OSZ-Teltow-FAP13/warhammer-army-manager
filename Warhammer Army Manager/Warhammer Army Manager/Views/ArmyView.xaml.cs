@@ -30,16 +30,16 @@ namespace Warhammer_Army_Manager.Views
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-            if (ArmyList.SelectedItem as Army is null)
+            if (ArmyListView.SelectedItem as Army is null)
                 return;
 
             if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
                 return;
 
             using var context = new ApplicationDbContext();
-            context.Remove(context.Armys.Single(a => a.Id == (ArmyList.SelectedItem as Army)!.Id));
+            context.Remove(context.Armys.Single(a => a.Id == (ArmyListView.SelectedItem as Army)!.Id));
             context.SaveChanges();
-            ArmyList.ItemsSource = context.Armys.ToList();
+            ArmyListView.ItemsSource = context.Armys.ToList();
         }
     }
 }

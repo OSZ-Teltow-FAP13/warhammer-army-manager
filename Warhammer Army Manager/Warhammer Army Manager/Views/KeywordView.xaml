@@ -44,7 +44,7 @@
         </StackPanel>
 
         <ListView Grid.Row="2"
-                  Name="KeywordList"
+                  Name="KeywordListView"
                   ItemsSource="{Binding Keywords}"
                   HorizontalAlignment="Left"
                   MaxHeight="400"

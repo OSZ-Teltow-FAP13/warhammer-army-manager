@@ -31,7 +31,7 @@
         </StackPanel>
 
         <ListView Grid.Row="2"
-              Name="UnitList"
+              Name="UnitListView"
               ItemsSource="{Binding Units}"
               HorizontalAlignment="Left"
               MaxHeight="400"
