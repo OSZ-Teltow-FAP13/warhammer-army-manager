@@ -6,13 +6,18 @@
         xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
         xmlns:viewmodels="clr-namespace:Warhammer_Army_Manager.ViewModels"
         mc:Ignorable="d"
-        Title="Add a tag" Height="450" Width="400">
-    <Grid>
+        Title="Add a Keyword" Height="300" Width="400">
+    <Grid Background="#272537" >
 
-        <Label Content="Name" Margin="25" VerticalAlignment="Top" HorizontalAlignment="left"/>
-        <TextBox  Height="30" Text="{Binding Name}" Width="200" Margin="25,50" VerticalAlignment="Top" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+        <Label Content="Name" Margin="25" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White"/>
+        <TextBox  Height="30" Text="{Binding Name}" Width="200" Margin="25,50" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="1" BorderBrush="#E0E0E0" />
 
-        <Button Height="30" Command="{Binding AddKeywordCommand}" Content="Add" Width="70"  VerticalContentAlignment="Center" Padding="5" Margin="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="#E0E0E0" />
-
+        <Button Height="30" Command="{Binding AddKeywordCommand}" Content="Add" Width="70" VerticalContentAlignment="Center" Padding="5" Margin="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="#E0E0E0" Background="White" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>

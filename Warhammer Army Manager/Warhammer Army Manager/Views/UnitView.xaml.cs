@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Warhammer_Army_Manager.Database.Models;
+using Warhammer_Army_Manager.Database;
 
 namespace Warhammer_Army_Manager.Views
 {
@@ -23,6 +25,20 @@ namespace Warhammer_Army_Manager.Views
         public UnitView()
         {
             InitializeComponent();
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            if (UnitListView.SelectedItem as Unit is null)
+                return;
+
+            if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
+                return;
+
+            using var context = new ApplicationDbContext();
+            context.Remove(context.Units.Single(a => a.Id == (UnitListView.SelectedItem as Unit)!.Id));
+            context.SaveChanges();
+            UnitListView.ItemsSource = context.Units.ToList();
         }
     }
 }
