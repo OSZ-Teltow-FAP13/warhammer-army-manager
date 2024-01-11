@@ -47,12 +47,16 @@ namespace Warhammer_Army_Manager.Database
                 entity.Property(e => e.Bravery);
                 entity.Property(e => e.Save);
                 entity.Property(e => e.Points);
+                entity.HasMany(e => e.Keywords);
+                entity.HasMany(e => e.Weapons);
+                entity.HasMany(e => e.Armys);
             });
 
             modelBuilder.Entity<Keyword>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name);
+                entity.HasMany(e => e.Units);
             });
 
             modelBuilder.Entity<Weapon>(entity =>
@@ -67,6 +71,7 @@ namespace Warhammer_Army_Manager.Database
                 entity.Property(e => e.Rend);
                 entity.Property(e => e.Damage);
                 entity.Property(e => e.SpecialEffect);
+                entity.HasMany(e => e.Units);
             });
 
             modelBuilder.Entity<Army>(entity =>
@@ -74,6 +79,7 @@ namespace Warhammer_Army_Manager.Database
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
                 entity.Property(e => e.Points);
+                entity.HasMany(e => e.Units);
             });
         }
     }
