@@ -35,7 +35,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Click="Delete" FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="#FF4682B4">
+                                    <Button Click="Delete" FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="{StaticResource Primary}">
                                         <Button.Resources>
                                             <Style TargetType="Border">
                                                 <Setter Property="CornerRadius" Value="4"/>

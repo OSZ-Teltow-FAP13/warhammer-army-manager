@@ -56,7 +56,7 @@
                                             <DataTemplate>
                                                 <Border Padding="5,3"
                                                         Margin="0,3,3,0"
-                                                        Background="Orange"
+                                                        Background="{StaticResource Secondary}"
                                                         CornerRadius="5">
                                                     <TextBlock Text="{Binding Name}"/>
                                                 </Border>
@@ -79,25 +79,25 @@
                                             <Setter Property="FontSize" Value="14"/>
                                         </Style>
                                     </StackPanel.Resources>
-                                    <Border CornerRadius="5" Background="#2c5c77">
+                                    <Border CornerRadius="5" Background="{StaticResource UnitMovement}">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Bewegung  " />
                                             <TextBlock Text="{Binding Move}" />
                                         </StackPanel>
                                     </Border>
-                                    <Border CornerRadius="5" Background="#682c77">
+                                    <Border CornerRadius="5" Background="{StaticResource UnitProtection}">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Schutz  " />
                                             <TextBlock Text="{Binding Save}" />
                                         </StackPanel>
                                     </Border>
-                                    <Border CornerRadius="5" Background="#2c7733">
+                                    <Border CornerRadius="5" Background="{StaticResource UnitBravery}">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Mut  " FontSize="14"/>
                                             <TextBlock Text="{Binding Bravery}" FontSize="14"/>
                                         </StackPanel>
                                     </Border>
-                                    <Border CornerRadius="5" Background="#902b2b">
+                                    <Border CornerRadius="5" Background="{StaticResource UnitWounds}">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Wunden  " FontSize="14"/>
                                             <TextBlock Text="{Binding Wounds}" FontSize="14"/>

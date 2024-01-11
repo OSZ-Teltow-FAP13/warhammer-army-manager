@@ -7,14 +7,28 @@
              xmlns:system="clr-namespace:System;assembly=System.Runtime">
     <Application.Resources>
         <ResourceDictionary>
-            
+
+            <!-- theme resources -->
             <ResourceDictionary.MergedDictionaries>
+                <!-- global colorscheme -->
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="BgPrimary" Color="#272537" />
+                    <SolidColorBrush x:Key="Primary" Color="#FF4682B4" />
+                    <SolidColorBrush x:Key="Secondary" Color="Orange" />
+                    <SolidColorBrush x:Key="Tertiary" Color="#fff" />
+
+                    <SolidColorBrush x:Key="UnitMovement" Color="#2c5c77" />
+                    <SolidColorBrush x:Key="UnitProtection" Color="#682c77" />
+                    <SolidColorBrush x:Key="UnitBravery" Color="#2c7733" />
+                    <SolidColorBrush x:Key="UnitWounds" Color="#902b2b" />
+                </ResourceDictionary>
+                
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/WindowButtonTheme.xaml"/>
-                <ResourceDictionary Source="Theme/DataGridTheme.xaml"/>
                 <ResourceDictionary Source="Theme/ListViewTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            <!-- View <> ViewModel - bindings -->
             <DataTemplate DataType="{x:Type viewModel:DashboardViewModel}">
                 <views:DashboardView/>
             </DataTemplate>
@@ -46,7 +60,6 @@
             <DataTemplate DataType="{x:Type viewModel:UnitAddViewModel}">
                 <views:UnitAddView/>
             </DataTemplate>
-
 
         </ResourceDictionary>
     </Application.Resources>

@@ -29,7 +29,7 @@
                     FontSize="15"
                     Padding="16, 5"
                     Foreground="White" 
-                    Background="#FF4682B4" 
+                    Background="{StaticResource Primary}" 
                     BorderThickness="0"
                     Cursor="Hand"
                     HorizontalAlignment="Left">
@@ -45,7 +45,7 @@
                     Margin="10,0,0,0"
                     Padding="16, 5"
                     Foreground="White" 
-                    Background="#FF4682B4" 
+                    Background="{StaticResource Primary}" 
                     BorderThickness="0"
                     Cursor="Hand"
                     HorizontalAlignment="Left">

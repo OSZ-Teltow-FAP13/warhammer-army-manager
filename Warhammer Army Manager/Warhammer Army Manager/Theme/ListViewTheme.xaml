@@ -10,9 +10,9 @@
 
     <!-- Stil für den GridViewColumnHeader -->
     <Style x:Key="FlatHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
-        <Setter Property="Background" Value="#FF4682B4" />
+        <Setter Property="Background" Value="{StaticResource Primary}" />
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="BorderBrush" Value="#FF4682B4" />
+        <Setter Property="BorderBrush" Value="{StaticResource Primary}" />
         <Setter Property="BorderThickness" Value="0,0,0,2" />
         <Setter Property="Padding" Value="8,5" />
         <Setter Property="Height" Value="40"/>
