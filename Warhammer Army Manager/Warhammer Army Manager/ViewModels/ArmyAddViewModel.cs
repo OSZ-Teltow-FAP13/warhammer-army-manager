@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Warhammer_Army_Manager.Commands;
@@ -32,13 +33,10 @@ namespace Warhammer_Army_Manager.ViewModels
         }
         
 
-        public ArmyAddViewModel()
+        public ArmyAddViewModel(DashboardViewModel dvm)
         {
-            using (var context = new ApplicationDbContext())
-            {
-                foreach (Unit u in context.Units.ToList())
-                    UnitsAvailable.Add(u);
-            }
+            PopulateUnitsList();
+            ResetTotalPoints();
 
             AddCommand = new RelayCommand(o =>
             {
@@ -57,8 +55,47 @@ namespace Warhammer_Army_Manager.ViewModels
 
             SaveCommand = new RelayCommand(o =>
             {
-                // ToDo: save army list
+                if (UnitsSelected is null)
+                    return;
+
+                using var context = new ApplicationDbContext();
+                var newArmy = new Army
+                {
+                    Name = $"MyArmy-{context.Army.Count()}",
+                    Points = 1337
+                };
+
+                foreach (Unit u in UnitsSelected)
+                    newArmy.Units.Add(context.Units.Where(x => x.Id == u.Id).First());
+
+                context.Army.Add(newArmy);
+                context.SaveChanges();
+
+                // show the model before clearing the lists
+                MessageBox.Show("Armee erfolgreich Aufgestellt.\nSie steht dir nun für deine nächsten Gefechte zur verfügung.", "Armee aufgestellt", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                UnitsSelected.Clear();
+                PopulateUnitsList();
+                ResetTotalPoints();
+
+                // bump dashboard army count
+                dvm.ArmyCount++;
             });
+        }
+
+        protected void PopulateUnitsList()
+        {
+            UnitsAvailable.Clear();
+
+            using var context = new ApplicationDbContext();
+
+            foreach (Unit u in context.Units.ToList())
+                UnitsAvailable.Add(u);
+        }
+
+        protected void ResetTotalPoints()
+        {
+            TotalPoints = "Total: 0";
         }
     }
 }
