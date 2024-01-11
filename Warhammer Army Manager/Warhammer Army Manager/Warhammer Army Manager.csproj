@@ -21,6 +21,7 @@
     <None Remove="Resources\army-manager-black.png" />
     <None Remove="Resources\army-manager-white.png" />
     <None Remove="Resources\unit01.png" />
+    <None Remove="Resources\unit02.jpg" />
     <None Remove="Resources\w40k-50cal.png" />
   </ItemGroup>
 
@@ -52,9 +53,16 @@
     <Resource Include="Resources\unit01.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\unit02.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\w40k-50cal.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

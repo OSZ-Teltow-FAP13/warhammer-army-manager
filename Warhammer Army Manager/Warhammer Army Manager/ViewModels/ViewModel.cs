@@ -8,5 +8,6 @@ namespace Warhammer_Army_Manager.ViewModels
 {
     class ViewModel : ObservableObject
     {
+        //
     }
 }
