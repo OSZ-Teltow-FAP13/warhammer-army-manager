@@ -18,7 +18,7 @@
           Name="KeywordList"
           ItemsSource="{Binding Weapons}"
           HorizontalAlignment="Left"
-          MaxHeight="400"
+          MaxHeight="450"
           Background="White"
           BorderBrush="Transparent" 
           BorderThickness="0">

@@ -44,6 +44,9 @@
     <Page Update="Views\DashboardView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\UnitAddView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\KeywordAddView.xaml">
       <SubType>Designer</SubType>
     </Page>

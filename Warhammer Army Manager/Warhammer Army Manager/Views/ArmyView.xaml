@@ -33,7 +33,7 @@
 
 
         <ListView Grid.Row="2"
-              Name="KeywordList"
+              Name="ArmyList"
               ItemsSource="{Binding Armys}"
               HorizontalAlignment="Left"
               MaxHeight="400" 
@@ -54,7 +54,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="#FF4682B4">
+                                    <Button Click="Delete" FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="#FF4682B4">
                                         <Button.Resources>
                                             <Style TargetType="Border">
                                                 <Setter Property="CornerRadius" Value="4"/>

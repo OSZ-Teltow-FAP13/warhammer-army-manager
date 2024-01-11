@@ -38,6 +38,11 @@
                 <views:KeywordAddView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:UnitAddViewModel}">
+                <views:UnitAddView/>
+            </DataTemplate>
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
