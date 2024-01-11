@@ -19,47 +19,40 @@
           ItemsSource="{Binding Weapons}"
           HorizontalAlignment="Left"
           MaxHeight="450"
-          Background="White"
-          BorderBrush="Transparent" 
-          BorderThickness="0">
+          Style="{StaticResource ListViewTheme}">
             <ListView.View>
-                <GridView>
+                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
                     <GridViewColumn Header="ID"
                                     DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Type" 
                                     DisplayMemberBinding="{Binding Type}" 
-                                    Width="55"/>
+                                    Width="55" />
                     <GridViewColumn Header="Name" 
                                     DisplayMemberBinding="{Binding Name}" 
-                                    Width="150"/>
+                                    Width="150" />
                     <GridViewColumn Header="Range" 
                                     DisplayMemberBinding="{Binding Range}" 
-                                    Width="55"/>
+                                    Width="55" />
                     <GridViewColumn Header="Attacks" 
                                     DisplayMemberBinding="{Binding Attacks}"
-                                    Width="55"/>
+                                    Width="55" />
                     <GridViewColumn Header="ToHit" 
                                     DisplayMemberBinding="{Binding ToHit}" 
-                                    Width="55"/>
+                                    Width="55" />
                     <GridViewColumn Header="ToWound" 
                                     DisplayMemberBinding="{Binding ToWound}" 
-                                    Width="55"/>
+                                    Width="55" />
                     <GridViewColumn Header="Rend" 
                                     DisplayMemberBinding="{Binding Rend}"
-                                    Width="55"/>
+                                    Width="55" />
                     <GridViewColumn Header="Damage" 
                                     DisplayMemberBinding="{Binding Damage}" 
                                     Width="55"/>
                     <GridViewColumn Header="SpeacialEffect" 
                                     DisplayMemberBinding="{Binding SpeacialEffect}"
-                                    Width="150"/>
+                                    Width="150" />
                 </GridView>
             </ListView.View>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="Height" Value="30"/>
-                </Style>
-            </ListView.ItemContainerStyle>
         </ListView>
     </StackPanel>
 </UserControl>

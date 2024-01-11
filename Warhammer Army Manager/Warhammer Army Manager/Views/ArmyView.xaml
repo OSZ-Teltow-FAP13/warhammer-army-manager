@@ -14,34 +14,15 @@
                HorizontalAlignment="Left"
                Margin="0,0,0,20"/>
 
-        <StackPanel Orientation="Horizontal"
-             Margin="0,0,0,20">
-            <Button Content="Hinzufügen"
-                    ToolTip="add"
-                    Margin="0,0,20,0"
-                    Padding="20 7"
-                    Background="White"
-                    Command="{Binding ShowWindowCommand}">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="7"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-        </StackPanel>
-
-
-
         <ListView Grid.Row="2"
               Name="ArmyList"
               ItemsSource="{Binding Armys}"
               HorizontalAlignment="Left"
-              MaxHeight="400" 
-              Background="White"
-              BorderBrush="Transparent" 
-              BorderThickness="0">
+              MaxHeight="450" 
+              Style="{StaticResource ListViewTheme}">
             <ListView.View>
-                <GridView>
+                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
+
                     <GridViewColumn Header="ID" 
                                 DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Name" 

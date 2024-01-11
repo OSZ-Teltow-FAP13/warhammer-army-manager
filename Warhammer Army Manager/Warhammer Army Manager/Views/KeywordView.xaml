@@ -48,18 +48,17 @@
                   ItemsSource="{Binding Keywords}"
                   HorizontalAlignment="Left"
                   MaxHeight="400"
-                  Background="White"
-                  BorderBrush="Transparent" 
-                  BorderThickness="0">
-            
+                  Style="{StaticResource ListViewTheme}">
+
             <ListView.View>
-                <GridView>
+                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
                     <GridViewColumn Header="ID" 
                                     DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Name" 
                                     DisplayMemberBinding="{Binding Name}" 
                                     Width="650"/>
-                    <GridViewColumn Header="Aktion" Width="40" >
+                    <GridViewColumn Header="Aktion" 
+                                    Width="40" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">

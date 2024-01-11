@@ -35,6 +35,9 @@
     <Page Update="Theme\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Theme\ListViewTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Theme\WindowButtonTheme.xaml">
       <SubType>Designer</SubType>
     </Page>

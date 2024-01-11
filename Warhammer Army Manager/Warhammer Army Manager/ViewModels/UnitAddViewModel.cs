@@ -44,7 +44,6 @@ namespace Warhammer_Army_Manager.ViewModels
 
                 vm.UnitCount += 1;
             });
-
         }
     }
 }
