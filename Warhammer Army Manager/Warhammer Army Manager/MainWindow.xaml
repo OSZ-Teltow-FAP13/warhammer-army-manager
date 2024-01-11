@@ -112,7 +112,7 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding TagViewCommand}"/>
-                <TextBlock Margin="10,80,0,10"
+                <TextBlock Margin="10,70,0,10"
                            Foreground="#444" >
                     Von: <LineBreak /> Marc Bonneß <LineBreak /> Maximilian Mewes <LineBreak /> Marian Buhle
                 </TextBlock>

@@ -37,9 +37,9 @@ namespace Warhammer_Army_Manager.Views
                 return;
 
             using var context = new ApplicationDbContext();
-            context.Remove(context.Armys.Single(a => a.Id == (ArmyListView.SelectedItem as Army)!.Id));
+            context.Remove(context.Army.Single(a => a.Id == (ArmyListView.SelectedItem as Army)!.Id));
             context.SaveChanges();
-            ArmyListView.ItemsSource = context.Armys.ToList();
+            ArmyListView.ItemsSource = context.Army.ToList();
         }
     }
 }

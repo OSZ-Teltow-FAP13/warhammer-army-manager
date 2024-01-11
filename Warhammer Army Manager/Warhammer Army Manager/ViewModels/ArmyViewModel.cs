@@ -20,7 +20,7 @@ namespace Warhammer_Army_Manager.ViewModels
             Armys = new ObservableCollection<Army>();
             using (var context = new ApplicationDbContext())
             {
-                foreach (Army t in context.Armys.ToList())
+                foreach (Army t in context.Army.ToList())
                 {
                     Armys.Add(t);
                 }
