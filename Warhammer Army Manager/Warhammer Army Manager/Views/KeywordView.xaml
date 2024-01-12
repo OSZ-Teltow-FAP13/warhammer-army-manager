@@ -15,46 +15,6 @@
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
 
-        <StackPanel Orientation="Horizontal"
-                    Margin="0,0,0,20">
-            <Button Content="Hinzufügen"
-                    ToolTip="add"
-                    Margin="0,0,20,0"
-                    Padding="20 7"
-                    Background="White"
-                    Command="{Binding ShowWindowCommand}">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="7"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Content="Löschen"
-                    ToolTip="Löschen"
-                    Margin="0,0,20,0"
-                    Padding="20 7"
-                    Background="White"
-                    Command="{Binding DeleteCommand}">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="7"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Content="Alle Löschen"
-                    ToolTip="Alle Löschen"
-                    Margin="0,0,20,0"
-                    Padding="20 7"
-                    Background="White"
-                    IsEnabled="False">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="7"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-        </StackPanel>
-
         <ListView Grid.Row="2"
                   Name="KeywordListView"
                   ItemsSource="{Binding Keywords}"

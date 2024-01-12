@@ -16,11 +16,10 @@ namespace Warhammer_Army_Manager.ViewModels
     class KeywordViewModel : ViewModel
     {
         public ObservableCollection<Keyword> Keywords { get; set; } = new();
-        public Keyword SelectedKeyword { get; set; }
+        public Keyword SelectedKeyword { get; set; } = new();
         public RelayCommand DeleteCommand { get; set; }
-        public RelayCommand ShowWindowCommand { get; set; }
 
-        public KeywordViewModel(KeywordAddView view)
+        public KeywordViewModel()
         {
             Keywords = KeywordManager.GetKeywords();
 
@@ -36,14 +35,6 @@ namespace Warhammer_Army_Manager.ViewModels
                 context.Remove(context.Keywords.Single(a => a.Id == SelectedKeyword.Id));
                 context.SaveChanges();
                 Keywords.Remove(SelectedKeyword);
-            });
-
-            ShowWindowCommand = new RelayCommand(o =>
-            {
-                var mainWindow = o as Window;
-                view.Owner = mainWindow;
-                view.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-                view.Show();
             });
         }
 

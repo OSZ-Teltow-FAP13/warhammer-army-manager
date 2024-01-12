@@ -17,6 +17,7 @@ namespace Warhammer_Army_Manager.ViewModels
     class ArmyViewModel : ViewModel
     {
         public ObservableCollection<Army> Armys { get; set; } = new();
+        public Army SelectedArmy { get; set; } = new();
         public RelayCommand ShowArmyCommand { get; set; }
 
         private IWindowService _window;
@@ -32,7 +33,6 @@ namespace Warhammer_Army_Manager.ViewModels
 
         public ArmyViewModel(IWindowService window, ArmyShowViewModel ArmyShowVM, ArmyShowView ArmyShowView)
         {
-
             WindowService = window;
 
             using (var context = new ApplicationDbContext())
@@ -45,8 +45,8 @@ namespace Warhammer_Army_Manager.ViewModels
 
             ShowArmyCommand = new RelayCommand(o =>
             {
-                ArmyShowVM.Army = Armys.Last();
-                WindowService.ShowWindow(ArmyShowView, o as Window);
+                ArmyShowVM.Army = SelectedArmy;
+                WindowService.ShowWindow(ArmyShowView, (o as Window)!);
             });
         }
     }

@@ -45,19 +45,8 @@ namespace Warhammer_Army_Manager
                 DataContext = provider.GetRequiredService<ArmyShowViewModel>()
             });
             services.AddSingleton<UnitViewModel>();
-            services.AddSingleton<UnitAddViewModel>();
-            services.AddSingleton<UnitAddView>(provider => new UnitAddView()
-            {
-                DataContext = provider.GetRequiredService<UnitAddViewModel>()
-            });
             services.AddSingleton<WeaponViewModel>();
             services.AddSingleton<KeywordViewModel>();
-            services.AddSingleton<KeywordAddViewModel>();
-            services.AddSingleton<KeywordAddView>(provider => new KeywordAddView()
-            {
-                DataContext = provider.GetRequiredService<KeywordAddViewModel>()
-            });
-            services.AddSingleton<UnitAddViewModel>();
 
 
 

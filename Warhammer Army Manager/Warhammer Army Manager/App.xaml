@@ -57,14 +57,6 @@
                 <views:KeywordView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:KeywordAddViewModel}">
-                <views:KeywordAddView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:UnitAddViewModel}">
-                <views:UnitAddView/>
-            </DataTemplate>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
