@@ -32,7 +32,7 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<MainWindow>(provider => new MainWindow()
             {
                 DataContext = provider.GetRequiredService<MainWindowViewModel>()
-            }); 
+            });
 
             // view models
             services.AddSingleton<MainWindowViewModel>();
@@ -64,8 +64,14 @@ namespace Warhammer_Army_Manager
 
             _serviceProvider = services.BuildServiceProvider();
 
+            // always make sure DB (.db sqllite file) exists, if not create DB with all migration executed
+            using (var context = new ApplicationDbContext())
+            {
+                context.Database.EnsureCreated();
+            }    
+            
             /* save for later
-            addSampleData();
+                addSampleData();
             */
         }
 
@@ -79,11 +85,8 @@ namespace Warhammer_Army_Manager
 
         private static void addSampleData()
         {
-
             using (var context = new ApplicationDbContext())
             {
-                context.Database.EnsureCreated();
-
                 string unitName = "TestBlubberDUmpfbacke";
                 if (!context.Units.Any(unit => unit.Name == unitName))
                 {
