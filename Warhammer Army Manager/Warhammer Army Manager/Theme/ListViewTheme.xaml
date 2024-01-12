@@ -38,7 +38,7 @@
         <Setter Property="Background" Value="White" />
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="BorderBrush" Value="#CCCCCC" />
-        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="BorderThickness" Value="0,0,0,0" />
         <Setter Property="Padding" Value="5" />
         <Setter Property="Margin" Value="0,0,0,5" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -50,7 +50,7 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="5">
+                            CornerRadius="4">
                         <GridViewRowPresenter HorizontalAlignment="Stretch"
                                               VerticalAlignment="Center"
                                               Content="{TemplateBinding Content}"
@@ -63,6 +63,13 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#E6F7FF" />
             </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="true" />
+                    <Condition Property="Selector.IsSelectionActive" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Tertiary}" />
+            </MultiTrigger>
         </Style.Triggers>
     </Style>
    

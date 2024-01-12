@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
         xmlns:viewmodels="clr-namespace:Warhammer_Army_Manager.ViewModels"
         mc:Ignorable="d"
-        Title="Add a Keyword" Height="300" Width="400">
+        Title="Schlüsselwort hinzufügen" Height="300" Width="400">
     <Grid Background="#272537" >
 
         <Label Content="Name" Margin="25" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White"/>

@@ -15,13 +15,28 @@ namespace Warhammer_Army_Manager.ViewModels
 {
     class KeywordViewModel : ViewModel
     {
-        public ObservableCollection<Keyword> Keywords { get; set; }
-
+        public ObservableCollection<Keyword> Keywords { get; set; } = new();
+        public Keyword SelectedKeyword { get; set; }
+        public RelayCommand DeleteCommand { get; set; }
         public RelayCommand ShowWindowCommand { get; set; }
 
         public KeywordViewModel(KeywordAddView view)
         {
             Keywords = KeywordManager.GetKeywords();
+
+            DeleteCommand = new RelayCommand(o =>
+            {
+                if (SelectedKeyword is null)
+                    return;
+
+                if (MessageBox.Show($"Schlüsselwort \"{SelectedKeyword.Name}\" Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
+                    return;
+
+                using var context = new ApplicationDbContext();
+                context.Remove(context.Keywords.Single(a => a.Id == SelectedKeyword.Id));
+                context.SaveChanges();
+                Keywords.Remove(SelectedKeyword);
+            });
 
             ShowWindowCommand = new RelayCommand(o =>
             {

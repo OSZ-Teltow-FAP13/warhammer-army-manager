@@ -29,12 +29,24 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Content="Alle Löschen"
-                    ToolTip="delete all"
+            <Button Content="Löschen"
+                    ToolTip="Löschen"
                     Margin="0,0,20,0"
                     Padding="20 7"
                     Background="White"
-                    Click="DeleteAll">
+                    Command="{Binding DeleteCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Alle Löschen"
+                    ToolTip="Alle Löschen"
+                    Margin="0,0,20,0"
+                    Padding="20 7"
+                    Background="White"
+                    IsEnabled="False">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="7"/>
@@ -46,8 +58,10 @@
         <ListView Grid.Row="2"
                   Name="KeywordListView"
                   ItemsSource="{Binding Keywords}"
+                  SelectedItem="{Binding SelectedKeyword}"
                   HorizontalAlignment="Left"
                   MaxHeight="400"
+                  SelectionMode="Single"
                   Style="{StaticResource ListViewTheme}">
 
             <ListView.View>
@@ -57,22 +71,6 @@
                     <GridViewColumn Header="Name" 
                                     DisplayMemberBinding="{Binding Name}" 
                                     Width="650"/>
-                    <GridViewColumn Header="Aktion" 
-                                    Width="40" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Button Click="Delete" FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="{StaticResource Primary}">
-                                        <Button.Resources>
-                                            <Style TargetType="Border">
-                                                <Setter Property="CornerRadius" Value="4"/>
-                                            </Style>
-                                        </Button.Resources>
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
