@@ -27,19 +27,5 @@ namespace Warhammer_Army_Manager.Views
         {
             InitializeComponent();
         }
-
-        private void Delete(object sender, RoutedEventArgs e)
-        {
-            if (ArmyListView.SelectedItem as Army is null)
-                return;
-
-            if (MessageBox.Show("Wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
-                return;
-
-            using var context = new ApplicationDbContext();
-            context.Remove(context.Army.Single(a => a.Id == (ArmyListView.SelectedItem as Army)!.Id));
-            context.SaveChanges();
-            ArmyListView.ItemsSource = context.Army.ToList();
-        }
     }
 }
