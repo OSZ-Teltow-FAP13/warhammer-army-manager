@@ -7,19 +7,177 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:vm="clr-namespace:Warhammer_Army_Manager.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel Orientation="Vertical"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <iconPacks:PackIconMaterialDesign HorizontalAlignment="Center"
-                                              Foreground="{StaticResource PrimaryDarkBrush}"
-                                              Width="100" Height="100"
-                                              Kind="Home"/>
-            <TextBlock FontSize="40" FontWeight="Bold" 
-                       VerticalAlignment="Center" HorizontalAlignment="Center" 
-                       Foreground="{StaticResource PrimaryDarkBrush}"
-                       Text="{Binding Title}"/>
+             d:DesignHeight="500" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock Text="Dashboard"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,30"/>
+        
+        <StackPanel Orientation="Horizontal">
+            <Border Width="400"
+                    Height="200">
+                
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="#3aa0ff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                
+                <Border.Clip>
+                    <RectangleGeometry 
+                        RadiusX="10"
+                        RadiusY="10" 
+                        Rect="0,0,400,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Warhammer&#x0a;Stormcast Eternal"
+                                   Foreground="White"
+                                   FontSize="28"
+                                   FontFamily="Aharoni"
+                                   Margin="20,30,10,0"/>
+                        <TextBlock Text="Build your almighty army today"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   Margin="20,10,10,0"/>
+                    </StackPanel>
+                    
+                    <Image Height="300"
+                           Source="/Resources/unit01.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="0,0,-91,-134">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-11.454"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </Border>
+
+            <Border Width="280"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="25,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#ffc554" Offset="0.0"/>
+                        <GradientStop Color="#ffb738" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Image Width="100"
+                       Source="/Resources/army-manager-black.png"
+                       Margin="0,0,0,25"/>
+            </Border>
+            
         </StackPanel>
-    </Grid>
+
+        <StackPanel Margin="0,35,0,0">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="35,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <StackPanel Orientation="Horizontal">
+                <Border Width="150"
+                        Height="150"
+                        Background="#844eff"
+                        CornerRadius="10"
+                        Margin="0">
+                    <StackPanel>
+                        <TextBlock Text="Anzahl&#x0a;Armeen"
+                                   Foreground="White"
+                                   FontSize="15"
+                                   Margin="20,10,10,0"/>
+                        <Grid>
+                            <TextBlock Text="{Binding ArmyCount}"
+                                       Foreground="White"
+                                       FontSize="24"
+                                       Margin="0,20,0,20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#FFFF4EF0"
+                        CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Anzahl &#x0a;Einheiten"
+                                   Foreground="White"
+                                   FontSize="15"
+                                   Margin="20,10,10,0"/>
+                        <Grid>
+                            <TextBlock Text="{Binding UnitCount}"
+                                       Foreground="White"
+                                       FontSize="24"
+                                       Margin="0,20,0,20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#32cc8c">
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                    </Border.Clip>
+                    <StackPanel>
+                        <TextBlock Text="Anzahl &#x0a;Waffen"
+                                   Foreground="White"
+                                   FontSize="15"
+                                   Margin="20,10,10,0"/>
+                        <Grid>
+                            <TextBlock Text="{Binding WeaponCount}"
+                                       Foreground="White"
+                                       FontSize="24"
+                                       Margin="0,20,0,20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            <Image Source="/Resources/w40k-50cal.png" RenderTransformOrigin="0.5,0.5" Margin="-3,48,3,-48">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-10.332"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#ecff4e"
+                        CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Anzahl &#x0a;Tags"
+                                   FontSize="15"
+                                   Margin="20,10,10,0"/>
+                        <Grid>
+                            <TextBlock Text="{Binding KeywordCount}"
+                                       FontSize="24"
+                                       Margin="0,20,0,20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

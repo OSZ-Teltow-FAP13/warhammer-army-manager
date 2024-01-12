@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Warhammer_Army_Manager.Views.UnitView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock Text="Einheiten"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+        <ScrollViewer CanContentScroll="True" 
+                      MaxHeight="500">
+            <ItemsControl ItemsSource="{Binding Units}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="5" Background="#eee" Margin="0,10,10,10">
+                            <Border.Clip>
+                                <RectangleGeometry 
+                                    RadiusX="5"
+                                    RadiusY="5" 
+                                    Rect="0,0,720,210"/>
+                            </Border.Clip>
+                            <Grid Height="210">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="/Resources/unit02.jpg" Width="220" Margin="-40,0,0,0"/>
+                                <Grid Grid.Column="1" Margin="20,10,0,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding Name}"
+                                               FontSize="20"
+                                               FontWeight="SemiBold" />
+                                    <TextBlock Text="Hier könnte die Einheiten Beschreibung hin. Allerdings haben wir&#x0a;keine, weil Marc B. zu faul war die aus dem Buch der Bücher zu übernehmen. "
+                                               TextWrapping="Wrap"
+                                               FontSize="14"
+                                               Opacity=".4"
+                                               Grid.Row="1"/>
+                                    <ItemsControl ItemsSource="{Binding Keywords}" Grid.Row="2">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5,3"
+                                                        Margin="0,3,3,0"
+                                                        Background="{StaticResource Secondary}"
+                                                        CornerRadius="5">
+                                                    <TextBlock Text="{Binding Name}"/>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Grid>
+
+                                <StackPanel Grid.Column="2" 
+                                            VerticalAlignment="Center" 
+                                            HorizontalAlignment="Left"
+                                            Margin="15,0,20,0">
+                                    <StackPanel.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="Margin" Value="0,5"/>
+                                            <Setter Property="Padding" Value="12, 7"/>
+                                        </Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Foreground" Value="White"/>
+                                            <Setter Property="FontSize" Value="14"/>
+                                        </Style>
+                                    </StackPanel.Resources>
+                                    <Border CornerRadius="5" Background="{StaticResource UnitMovement}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Bewegung  " />
+                                            <TextBlock Text="{Binding Move}" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Border CornerRadius="5" Background="{StaticResource UnitProtection}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Schutz  " />
+                                            <TextBlock Text="{Binding Save}" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Border CornerRadius="5" Background="{StaticResource UnitBravery}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Mut  " FontSize="14"/>
+                                            <TextBlock Text="{Binding Bravery}" FontSize="14"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border CornerRadius="5" Background="{StaticResource UnitWounds}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Wunden  " FontSize="14"/>
+                                            <TextBlock Text="{Binding Wounds}" FontSize="14"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </StackPanel>
+</UserControl>

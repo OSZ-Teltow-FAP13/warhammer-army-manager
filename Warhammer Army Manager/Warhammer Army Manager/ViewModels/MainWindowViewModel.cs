@@ -9,49 +9,71 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Warhammer_Army_Manager.Services;
 using Warhammer_Army_Manager.Database.Models;
-using Warhammer_Army_Manager.ViewModels.Commands;
+using Warhammer_Army_Manager.Commands;
+using System.Reflection;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
-    internal class MainWindowViewModel : BaseViewModel
+    class MainWindowViewModel : ObservableObject
     {
-        private string? _Name;
-        private IList<Unit> _Units;
-        private readonly DelegateCommand _changeNameCommand;
+        public string Version { get; set; }
+        public RelayCommand DashboardViewCommand { get; set; }
+        public RelayCommand ArmyViewCommand { get; set; }
+        public RelayCommand ArmyAddViewCommand { get; set; }
+        public RelayCommand UnitViewCommand { get; set; }
+        public RelayCommand WeaponViewCommand { get; set; }
+        public RelayCommand TagViewCommand { get; set; }
 
-        public ICommand ChangeNameCommand => _changeNameCommand;
+        private INavigationService _navigation;
 
-        public string Name
+        public INavigationService Navigation
         {
-            get => _Name;
-            set => base.SetProperty(ref _Name, value);
-        }
-        public IList<Unit> Units
-        {
-            get => _Units;
-            set => base.SetProperty(ref _Units, value);
-        }
-
-        public MainWindowViewModel()
-        {
-            _Units = new List<Unit>
+            get => _navigation;
+            set 
             {
-                new Unit {}
-            };
-
-            _changeNameCommand = new DelegateCommand(OnChangeName, CanChangeName);
+                _navigation = value;
+                OnPropertyChanged();
+            }
         }
-
-        private void OnChangeName(object commandParameter)
+        
+        public MainWindowViewModel(INavigationService nav)
         {
-            Name = "Walter";
-            _changeNameCommand.InvokeCanExecuteChanged();
-        }
+            Version = $"Version: {Assembly.GetExecutingAssembly().GetName().Version!.ToString()}";
 
-        private bool CanChangeName(object commandParameter)
-        {
-            return Name != "Walter";
+            Navigation = nav;
+            Navigation.NavigateTo<DashboardViewModel>();
+
+            DashboardViewCommand = new RelayCommand(o =>
+            {
+                Navigation.NavigateTo<DashboardViewModel>();
+            });
+
+            ArmyViewCommand = new RelayCommand(o =>
+            {
+                Navigation.NavigateTo<ArmyViewModel>();
+            });
+
+            ArmyAddViewCommand = new RelayCommand(o =>
+            {
+                Navigation.NavigateTo<ArmyAddViewModel>();
+            });
+
+            UnitViewCommand = new RelayCommand(o =>
+            {
+                Navigation.NavigateTo<UnitViewModel>();
+            });
+
+            WeaponViewCommand = new RelayCommand(o =>
+            {
+                Navigation.NavigateTo<WeaponViewModel>();
+            });
+
+            TagViewCommand = new RelayCommand(o =>
+            {
+                Navigation.NavigateTo<KeywordViewModel>();
+            });
         }
 
     }

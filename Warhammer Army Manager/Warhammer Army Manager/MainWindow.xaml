@@ -4,33 +4,128 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warhammer_Army_Manager"
+        xmlns:viewModel="clr-namespace:Warhammer_Army_Manager.ViewModels"
         mc:Ignorable="d"
-        Title="Warhammer Army Manager" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Style x:Key="NavigationContentStyle" TargetType="ContentControl">
-        </Style>
-    </Window.Resources>
-
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <ListBox x:Name="NavigationMenuListBox" 
-                 Style="{StaticResource NavigationListBoxStyle}"
-                 ItemContainerStyle="{DynamicResource NavigationListBoxItemStyle}"
-                 ItemTemplate="{DynamicResource NavigationDataTemplate}"
-                 ItemsSource="{StaticResource NavigationMenuItems}"/>
-
-        <ContentControl Grid.Column="1" Style="{StaticResource NavigationContentStyle}"/>
-    </Grid>
-    <!--
+        Title="Warhammer Army Manager"
+        Height="610" Width="930"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+    
+    <Border Background="{StaticResource BgPrimary}"
+            CornerRadius="15"
+            Margin="10">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" 
+                              Direction="-90"
+                              RenderingBias="Quality" 
+                              ShadowDepth="2"
+                              Opacity=".5"/>
+        </Border.Effect>
         <Grid>
-            Text="Cock also der Hänchen Hahn."
-            <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ddd" FontWeight="Black"></TextBlock>
-            <Button Command="{Binding Path=ChangeNameCommand}" Content="Explosion" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Click="ButtonMain_Click"/>
-            </Button>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!-- Alternative Logo / Brand text <RowDefinition Height="75"/>
+            <TextBlock Text="WAM"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="28"
+                       FontWeight="Black" 
+                       MouseLeftButtonDown="drag"/>
+            -->
+            <Border Grid.ColumnSpan="2"
+                    Background="Transparent"
+                    MouseLeftButtonDown="drag"/>
+
+            <StackPanel 
+                Orientation="Horizontal" 
+                Grid.Column="1"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0,10,10,0">
+                <Button Content="&#xE921;"
+                        FontFamily="Segoe MDL2 Assets"
+                        Foreground="White"
+                        Style="{StaticResource WindowButtonTheme}"
+                        Click="Minimize"
+                        ToolTip="minimieren"/>
+                <Button Content="&#xE711;"
+                        FontFamily="Segoe MDL2 Assets"
+                        Foreground="Red"
+                        Style="{StaticResource WindowButtonTheme}"
+                        Click="Close"
+                        ToolTip="schließen"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+
+                <Image Width="100"
+                       Source="/Resources/army-manager-white.png"
+                       MouseLeftButtonDown="drag"
+                       Margin="0,0,0,25"/>
+                
+                <RadioButton Content="Dashboard"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding DashboardViewCommand}"/>
+                <RadioButton Content="Armee aufstellen"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ArmyAddViewCommand}"/>
+                <RadioButton Content="Armeen"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ArmyViewCommand}"/>
+                <RadioButton Content="Einheiten"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding UnitViewCommand}"/>
+                <RadioButton Content="Waffen"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding WeaponViewCommand}"/>
+                <RadioButton Content="Tags"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding TagViewCommand}"/>
+                <TextBlock Margin="10,70,0,10"
+                           Foreground="#444" >
+                    Von: <LineBreak /> Marc Bonneß <LineBreak /> Maximilian Mewes <LineBreak /> Marian Buhle
+                </TextBlock>
+                <TextBlock Text="{Binding Version}"
+                           Foreground="#666"
+                           Margin="10,0,0,0"/>
+
+            </StackPanel>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding Navigation.CurrentView}"/>
         </Grid>
-    -->
+    </Border>
 </Window>

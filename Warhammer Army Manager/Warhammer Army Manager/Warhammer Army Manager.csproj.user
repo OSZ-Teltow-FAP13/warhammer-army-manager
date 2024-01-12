@@ -1,13 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\ArmyAddView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ArmyShowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ArmyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DashboardView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\KeywordView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UnitView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WeaponView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,7 +32,37 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Theme\ListViewTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Theme\WindowTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Theme\WindowButtonTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ArmyAddView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ArmyShowView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ArmyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\DashboardView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\KeywordView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UnitView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WeaponView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

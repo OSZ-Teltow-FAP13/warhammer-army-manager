@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Warhammer_Army_Manager.Views.WeaponView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+
+        <TextBlock Text="Waffen"
+           Foreground="White"
+           FontSize="28"
+           HorizontalAlignment="Left"
+           Margin="0,0,0,20"/>
+
+        <ListView Grid.Row="2"
+          Name="WeaponListView"
+          ItemsSource="{Binding Weapons}"
+          HorizontalAlignment="Left"
+          MaxHeight="400"
+          Style="{StaticResource ListViewTheme}">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
+                    <GridViewColumn Header="ID"
+                                    DisplayMemberBinding="{Binding Id}" 
+                                    Width="40"/>
+                    <GridViewColumn Header="Typ" 
+                                    DisplayMemberBinding="{Binding Type}" 
+                                    Width="55" />
+                    <GridViewColumn Header="Name" 
+                                    DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Reichweite" 
+                                    DisplayMemberBinding="{Binding Range}" 
+                                    Width="55" />
+                    <GridViewColumn Header="Attacken" 
+                                    DisplayMemberBinding="{Binding Attacks}"
+                                    Width="55" />
+                    <GridViewColumn Header="Treffen" 
+                                    DisplayMemberBinding="{Binding ToHit}" 
+                                    Width="55" />
+                    <GridViewColumn Header="Verwunden" 
+                                    DisplayMemberBinding="{Binding ToWound}" 
+                                    Width="55" />
+                    <GridViewColumn Header="Wucht" 
+                                    DisplayMemberBinding="{Binding Rend}"
+                                    Width="55" />
+                    <GridViewColumn Header="Schaden" 
+                                    DisplayMemberBinding="{Binding Damage}" 
+                                    Width="55"/>
+                    <GridViewColumn Header="Spezial Effekt" Width="600">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SpecialEffect}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</UserControl>
