@@ -56,14 +56,15 @@
                 </Button.Resources>
             </Button>
         </StackPanel>
-    
+
         <ListView HorizontalAlignment="Left"
                   ItemsSource="{Binding UnitsAvailable}"
                   SelectedItem="{Binding SelectedUnit}"
-                  MaxHeight="400">
+                  MaxHeight="400"
+                  Style="{StaticResource ListViewTheme}">
             <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="590" />
                     <GridViewColumn Header="Points" DisplayMemberBinding="{Binding Points}" Width="100"/>
                 </GridView>
             </ListView.View>

@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style BasedOn="{StaticResource {x:Type UserControl}}"
+           TargetType="{x:Type UserControl}"
+           x:Key="WindowTheme">
+
+        <!-- Stil für das UserControl -->
+        
+            <Setter Property="Background" Value="#001F3F" />
+            <!-- Dunkelblauer Hintergrund -->
+            <!--<Setter Property="CornerRadius" Value="10" />-->
+            <!-- Abgerundete Ecken -->
+            <!-- Füge hier weitere Stilanpassungen für das UserControl hinzu -->
+        
+
+
+
+    </Style>
+</ResourceDictionary>

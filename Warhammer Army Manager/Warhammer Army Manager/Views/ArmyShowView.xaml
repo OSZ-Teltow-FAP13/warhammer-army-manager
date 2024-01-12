@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
         mc:Ignorable="d"
         Title="Armee anzeigen" Height="450" Width="800">
-    <StackPanel>
+    <StackPanel Background="#272537">
         <TextBlock Text="{Binding Army.Name}"
                FontSize="28"
                HorizontalAlignment="Left"
