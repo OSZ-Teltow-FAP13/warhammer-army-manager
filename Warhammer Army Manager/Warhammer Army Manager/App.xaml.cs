@@ -39,6 +39,7 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<DashboardViewModel>();
             services.AddSingleton<ArmyViewModel>();
             services.AddSingleton<ArmyAddViewModel>();
+            services.AddSingleton<ArmyShowViewModel>();
             services.AddSingleton<UnitViewModel>();
             services.AddSingleton<WeaponViewModel>();
             services.AddSingleton<KeywordViewModel>();
@@ -58,6 +59,7 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
             services.AddSingleton<ViewModelLocator>();
+            services.AddSingleton<IWindowService, WindowService>();
 
 
             _serviceProvider = services.BuildServiceProvider();

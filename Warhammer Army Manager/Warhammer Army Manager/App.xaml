@@ -36,7 +36,11 @@
             <DataTemplate DataType="{x:Type viewModel:ArmyViewModel}">
                 <views:ArmyView/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type viewModel:ArmyShowViewModel}">
+                <views:ArmyShowView/>
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewModel:ArmyAddViewModel}">
                 <views:ArmyAddView/>
             </DataTemplate>

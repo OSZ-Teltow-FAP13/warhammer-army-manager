@@ -21,6 +21,7 @@ namespace Warhammer_Army_Manager.ViewModels
         public RelayCommand SaveCommand { get; set; }
         public Unit SelectedUnit { get; set; }
 
+        protected int _total;
         private string _totalPoints;
         public string TotalPoints
         {
@@ -51,6 +52,7 @@ namespace Warhammer_Army_Manager.ViewModels
                     total += u.Points;
 
                 TotalPoints = $"Total: {total}";
+                _total = total;
             });
 
             SaveCommand = new RelayCommand(o =>
@@ -62,7 +64,7 @@ namespace Warhammer_Army_Manager.ViewModels
                 var newArmy = new Army
                 {
                     Name = $"MyArmy-{context.Army.Count()}",
-                    Points = 1337
+                    Points = _total
                 };
 
                 foreach (Unit u in UnitsSelected)

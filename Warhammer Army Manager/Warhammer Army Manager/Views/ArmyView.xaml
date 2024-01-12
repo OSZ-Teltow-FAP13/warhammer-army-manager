@@ -14,38 +14,77 @@
                HorizontalAlignment="Left"
                Margin="0,0,0,20"/>
 
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,0,0,20">
+            <Button Content="Hinzufügen"
+                    ToolTip="add"
+                    Margin="0,0,20,0"
+                    Padding="20 7"
+                    Background="White"
+                    Command="{Binding ShowWindowCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Löschen"
+                    ToolTip="Löschen"
+                    Margin="0,0,20,0"
+                    Padding="20 7"
+                    Background="White"
+                    Command="{Binding DeleteCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Alle Löschen"
+                    ToolTip="Alle Löschen"
+                    Margin="0,0,20,0"
+                    Padding="20 7"
+                    Background="White"
+                    IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Content="Anzeigen"
+                    ToolTip="Anzeigen"
+                    Margin="0,0,20,0"
+                    Padding="20 7"
+                    Background="White"
+                    Command="{Binding ShowArmyCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
         <ListView Grid.Row="2"
               Name="ArmyListView"
               ItemsSource="{Binding Armys}"
               HorizontalAlignment="Left"
-              MaxHeight="450" 
+              MaxHeight="400" 
               Style="{StaticResource ListViewTheme}">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
 
                     <GridViewColumn Header="ID" 
-                                DisplayMemberBinding="{Binding Id}" />
+                                    DisplayMemberBinding="{Binding Id}"
+                                    Width="40"/>
                     <GridViewColumn Header="Name" 
-                                DisplayMemberBinding="{Binding Name}" 
-                                Width="590"/>
+                                    DisplayMemberBinding="{Binding Name}" 
+                                    Width="610"/>
                     <GridViewColumn Header="Points" 
-                                DisplayMemberBinding="{Binding Points}" 
-                                Width="60"/>
-                    <GridViewColumn Header="Aktion" Width="40" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Button Click="Delete" FontFamily="Segoe MDL2 Assets" Content="&#xE107;" FontSize="20" Foreground="White" Background="{StaticResource Primary}">
-                                        <Button.Resources>
-                                            <Style TargetType="Border">
-                                                <Setter Property="CornerRadius" Value="4"/>
-                                            </Style>
-                                        </Button.Resources>
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                                    DisplayMemberBinding="{Binding Points}" 
+                                    Width="60"/>
                 </GridView>
             </ListView.View>
         </ListView>
