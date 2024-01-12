@@ -45,17 +45,39 @@ namespace Warhammer_Army_Manager.ViewModels
                 OnPropertyChanged();
             }
         }
-        
+
+        protected int _max;
+        private string _maxPoints;
+        public string MaxPoints
+        {
+            get => _maxPoints;
+            set
+            {
+                _maxPoints = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public ArmyAddViewModel(DashboardViewModel dvm, ArmyViewModel avm)
         {
             PopulateUnitsList();
             ResetTotalPoints();
 
+            _max = 2000;
+            MaxPoints = $"Maximal: {_max}";
+
             AddUnitCommand = new RelayCommand(o =>
             {
                 if (SelectedUnit is null)
                     return;
+
+                if(SelectedUnit.Points+_total > _max)
+                {
+                    MessageBox.Show("Einheit konnte nicht hinzugefügt werden.\nDie maximale Armee Punktzahl wurde überschritten.", "Einheit hinzufügen fehlgeschlagen", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
 
                 UnitsSelected.Add(SelectedUnit);
                 UnitsAvailable.Remove(SelectedUnit);
