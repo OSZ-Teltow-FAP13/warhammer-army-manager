@@ -48,8 +48,6 @@ namespace Warhammer_Army_Manager
             services.AddSingleton<WeaponViewModel>();
             services.AddSingleton<KeywordViewModel>();
 
-
-
             // actual services
             services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
