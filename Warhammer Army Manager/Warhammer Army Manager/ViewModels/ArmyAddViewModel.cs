@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -15,11 +16,23 @@ namespace Warhammer_Army_Manager.ViewModels
 {
     class ArmyAddViewModel : ViewModel
     {
+        
         public ObservableCollection<Unit> UnitsSelected { get; set; } = new();
         public ObservableCollection<Unit> UnitsAvailable { get; set; } = new();
-        public RelayCommand AddCommand { get; set; }
+        public RelayCommand AddUnitCommand { get; set; }
         public RelayCommand SaveCommand { get; set; }
         public Unit SelectedUnit { get; set; }
+
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
 
         protected int _total;
         private string _totalPoints;
@@ -34,12 +47,12 @@ namespace Warhammer_Army_Manager.ViewModels
         }
         
 
-        public ArmyAddViewModel(DashboardViewModel dvm)
+        public ArmyAddViewModel(DashboardViewModel dvm, ArmyViewModel avm)
         {
             PopulateUnitsList();
             ResetTotalPoints();
 
-            AddCommand = new RelayCommand(o =>
+            AddUnitCommand = new RelayCommand(o =>
             {
                 if (SelectedUnit is null)
                     return;
@@ -51,7 +64,7 @@ namespace Warhammer_Army_Manager.ViewModels
                 foreach (Unit u in UnitsSelected)
                     total += u.Points;
 
-                TotalPoints = $"Total: {total}";
+                TotalPoints = $"Punkte: {total}";
                 _total = total;
             });
 
@@ -63,12 +76,12 @@ namespace Warhammer_Army_Manager.ViewModels
                 using var context = new ApplicationDbContext();
                 var newArmy = new Army
                 {
-                    Name = $"MyArmy-{context.Army.Count()}",
+                    Name = Name ?? $"MyArmy",
                     Points = _total
                 };
 
                 foreach (Unit u in UnitsSelected)
-                    newArmy.Units.Add(context.Units.Where(x => x.Id == u.Id).First());
+                    newArmy.Units.Add(context.Units.Include(x => x.Keywords).Where(x => x.Id == u.Id).First());
 
                 context.Army.Add(newArmy);
                 context.SaveChanges();
@@ -82,6 +95,9 @@ namespace Warhammer_Army_Manager.ViewModels
 
                 // bump dashboard army count
                 dvm.ArmyCount++;
+
+                avm.Armys.Add(newArmy);
+                Name = "";
             });
         }
 
@@ -91,13 +107,13 @@ namespace Warhammer_Army_Manager.ViewModels
 
             using var context = new ApplicationDbContext();
 
-            foreach (Unit u in context.Units.ToList())
+            foreach (Unit u in context.Units.Include(x => x.Keywords).ToList())
                 UnitsAvailable.Add(u);
         }
 
         protected void ResetTotalPoints()
         {
-            TotalPoints = "Total: 0";
+            TotalPoints = "Punkte: 0";
         }
     }
 }

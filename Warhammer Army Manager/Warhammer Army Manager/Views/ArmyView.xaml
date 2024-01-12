@@ -60,7 +60,7 @@
                     <GridViewColumn Header="Name" 
                                     DisplayMemberBinding="{Binding Name}" 
                                     Width="610"/>
-                    <GridViewColumn Header="Points" 
+                    <GridViewColumn Header="Punkte" 
                                     DisplayMemberBinding="{Binding Points}" 
                                     Width="60"/>
                 </GridView>

@@ -7,13 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <TextBlock Text="{Binding TotalPoints}"
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Name:"
                    Foreground="White"
-                   FontSize="20"
-                   Margin="0,0,0,10"/>
+                   Margin="0,-4,0,0"
+                   FontSize="18" />
+            <TextBox Text="{Binding Name}" 
+                     Width="200"
+                     Padding="4"
+                     VerticalAlignment="Top" 
+                     HorizontalAlignment="Center" 
+                     BorderThickness="1" BorderBrush="#E0E0E0" />
+            <TextBlock Text="{Binding TotalPoints}"
+                       Foreground="White"
+                       FontSize="20"
+                       Margin="30,0,0,0"/>
+        </StackPanel>
         <ListView HorizontalAlignment="Left"
                   ItemsSource="{Binding UnitsSelected}"
-                  MaxHeight="400">
+                  MaxHeight="300">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
@@ -39,7 +51,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Command="{Binding AddCommand}"
+            <Button Command="{Binding AddUnitCommand}"
                     Content="Hinzufügen"
                     FontSize="15"
                     Margin="10,0,0,0"

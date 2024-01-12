@@ -14,7 +14,7 @@
                    Margin="0,0,0,20"/>
         <ScrollViewer CanContentScroll="True" 
                       MaxHeight="500">
-            <ItemsControl ItemsSource="{Binding Units}" Name="unitsList">
+            <ItemsControl ItemsSource="{Binding Units}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border CornerRadius="5" Background="#eee" Margin="0,10,10,10">

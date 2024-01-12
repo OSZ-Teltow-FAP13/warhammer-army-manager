@@ -25,30 +25,30 @@
                     <GridViewColumn Header="ID"
                                     DisplayMemberBinding="{Binding Id}" 
                                     Width="40"/>
-                    <GridViewColumn Header="Type" 
+                    <GridViewColumn Header="Typ" 
                                     DisplayMemberBinding="{Binding Type}" 
                                     Width="55" />
                     <GridViewColumn Header="Name" 
                                     DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Range" 
+                    <GridViewColumn Header="Reichweite" 
                                     DisplayMemberBinding="{Binding Range}" 
                                     Width="55" />
-                    <GridViewColumn Header="Attacks" 
+                    <GridViewColumn Header="Attacken" 
                                     DisplayMemberBinding="{Binding Attacks}"
                                     Width="55" />
-                    <GridViewColumn Header="ToHit" 
+                    <GridViewColumn Header="Treffen" 
                                     DisplayMemberBinding="{Binding ToHit}" 
                                     Width="55" />
-                    <GridViewColumn Header="ToWound" 
+                    <GridViewColumn Header="Verwunden" 
                                     DisplayMemberBinding="{Binding ToWound}" 
                                     Width="55" />
-                    <GridViewColumn Header="Rend" 
+                    <GridViewColumn Header="Wucht" 
                                     DisplayMemberBinding="{Binding Rend}"
                                     Width="55" />
-                    <GridViewColumn Header="Damage" 
+                    <GridViewColumn Header="Schaden" 
                                     DisplayMemberBinding="{Binding Damage}" 
                                     Width="55"/>
-                    <GridViewColumn Header="SpecialEffect" Width="600">
+                    <GridViewColumn Header="Spezial Effekt" Width="600">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding SpecialEffect}" TextWrapping="Wrap"/>
