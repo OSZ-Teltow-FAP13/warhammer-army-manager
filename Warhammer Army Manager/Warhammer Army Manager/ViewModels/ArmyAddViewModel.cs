@@ -16,7 +16,6 @@ namespace Warhammer_Army_Manager.ViewModels
 {
     class ArmyAddViewModel : ViewModel
     {
-        
         public ObservableCollection<Unit> UnitsSelected { get; set; } = new();
         public ObservableCollection<Unit> UnitsAvailable { get; set; } = new();
         public RelayCommand AddUnitCommand { get; set; }
@@ -58,7 +57,6 @@ namespace Warhammer_Army_Manager.ViewModels
             }
         }
 
-
         public ArmyAddViewModel(DashboardViewModel dvm, ArmyViewModel avm)
         {
             PopulateUnitsList();
@@ -77,7 +75,6 @@ namespace Warhammer_Army_Manager.ViewModels
                     MessageBox.Show("Einheit konnte nicht hinzugefügt werden.\nDie maximale Armee Punktzahl wurde überschritten.", "Einheit hinzufügen fehlgeschlagen", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
-
 
                 UnitsSelected.Add(SelectedUnit);
                 UnitsAvailable.Remove(SelectedUnit);
