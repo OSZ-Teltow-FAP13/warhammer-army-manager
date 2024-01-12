@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Warhammer_Army_Manager.Services;
 using Warhammer_Army_Manager.Database.Models;
+using System.Collections.ObjectModel;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
