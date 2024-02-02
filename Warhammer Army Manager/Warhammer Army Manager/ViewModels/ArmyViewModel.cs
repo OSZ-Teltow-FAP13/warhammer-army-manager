@@ -18,6 +18,7 @@ namespace Warhammer_Army_Manager.ViewModels
     {
         public ObservableCollection<Army> Armys { get; set; } = new();
         public Army SelectedArmy { get; set; } = new();
+        public RelayCommand DeleteArmyCommand { get; set; }
         public RelayCommand ShowArmyCommand { get; set; }
 
         private IWindowService _window;
@@ -31,7 +32,7 @@ namespace Warhammer_Army_Manager.ViewModels
             }
         }
 
-        public ArmyViewModel(IWindowService window, ArmyShowViewModel ArmyShowVM, ArmyShowView ArmyShowView)
+        public ArmyViewModel(IWindowService window, DashboardViewModel DashboardVM, ArmyShowViewModel ArmyShowVM, ArmyShowView ArmyShowView)
         {
             WindowService = window;
 
@@ -42,6 +43,20 @@ namespace Warhammer_Army_Manager.ViewModels
                     Armys.Add(t);
                 }
             }
+
+            DeleteArmyCommand = new RelayCommand(o =>
+            {
+                if (SelectedArmy is null)
+                    return;
+                if (MessageBox.Show($"Armee \"{SelectedArmy.Name}\" wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
+                    return;
+
+                using var context = new ApplicationDbContext();
+                context.Remove(context.Army.Single(a => a.Id == SelectedArmy.Id));
+                context.SaveChanges();
+                Armys.Remove(SelectedArmy);
+                DashboardVM.ArmyCount = context.Army.Count();
+            });
 
             ShowArmyCommand = new RelayCommand(o =>
             {

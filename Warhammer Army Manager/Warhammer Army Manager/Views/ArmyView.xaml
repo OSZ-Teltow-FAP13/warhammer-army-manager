@@ -22,7 +22,7 @@
                     Margin="0,0,20,0"
                     Padding="20 7"
                     Background="White"
-                    Command="{Binding DeleteCommand}">
+                    Command="{Binding DeleteArmyCommand}">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="7"/>
