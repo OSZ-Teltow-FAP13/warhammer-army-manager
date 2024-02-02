@@ -48,7 +48,7 @@ namespace Warhammer_Army_Manager.ViewModels
             {
                 if (SelectedArmy is null)
                     return;
-                if (MessageBox.Show($"Armee \"{SelectedArmy.Name}\" wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
+                if (MessageBox.Show($"Arme \"{SelectedArmy.Name}\" wirklich löschen?", "Zeile löschen", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
                     return;
 
                 using var context = new ApplicationDbContext();

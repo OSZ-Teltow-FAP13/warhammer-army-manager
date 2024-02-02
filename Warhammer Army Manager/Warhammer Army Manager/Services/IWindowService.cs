@@ -11,6 +11,6 @@ namespace Warhammer_Army_Manager.Services
 {
     interface IWindowService
     {
-        public void ShowWindow(ArmyShowView vm, Window parentWindow);
+        public void ShowWindow(Window vm, Window parentWindow);
     }
 }

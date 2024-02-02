@@ -12,7 +12,7 @@ namespace Warhammer_Army_Manager.Services
 {
     class WindowService : IWindowService
     {
-        public void ShowWindow(ArmyShowView view, Window p)
+        public void ShowWindow(Window view, Window p)
         {
             view.Owner = p;
             view.WindowStartupLocation = WindowStartupLocation.CenterOwner;
