@@ -9,6 +9,7 @@ using System.Windows.Input;
 using Warhammer_Army_Manager.Commands;
 using Warhammer_Army_Manager.Database;
 using Warhammer_Army_Manager.Database.Models;
+using Warhammer_Army_Manager.Services;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
@@ -19,7 +20,7 @@ namespace Warhammer_Army_Manager.ViewModels
 
         public ICommand AddCommand { get; set; }
 
-        public ArmyAvailableUnitsViewModel(ArmyAddViewModel aaVM)
+        public ArmyAvailableUnitsViewModel(IViewModelLocator Locator)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -34,7 +35,8 @@ namespace Warhammer_Army_Manager.ViewModels
                 if (SelectedUnit is null)
                     return;
 
-                aaVM.UnitsSelected.Add(SelectedUnit);
+                ArmyAddViewModel aavm = Locator.GetVM<ArmyAddViewModel>() as ArmyAddViewModel;
+                aavm.UnitsSelected.Add(SelectedUnit); 
             });
         }
 

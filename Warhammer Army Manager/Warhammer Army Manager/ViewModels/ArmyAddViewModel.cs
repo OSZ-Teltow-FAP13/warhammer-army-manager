@@ -61,7 +61,7 @@ namespace Warhammer_Army_Manager.ViewModels
             }
         }
 
-        public ArmyAddViewModel(IWindowService window, DashboardViewModel dvm, ArmyViewModel avm, ArmyAvailableUnitsView aauv)
+        public ArmyAddViewModel(IWindowService window, DashboardViewModel dvm, ArmyViewModel avm, ArmyAvailableUnitsView view)
         {
             WindowService = window;
 
@@ -122,11 +122,6 @@ namespace Warhammer_Army_Manager.ViewModels
 
                 avm.Armys.Add(newArmy);
                 Name = "";
-            });
-
-            OpenAvailableUnitsWindowCommand = new RelayCommand(o =>
-            {
-                WindowService.ShowWindow(aauv, (o as Window)!);
             });
         }
 

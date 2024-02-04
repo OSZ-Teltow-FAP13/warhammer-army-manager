@@ -66,7 +66,9 @@ namespace Warhammer_Army_Manager.ViewModels
             {
                 Navigation.NavigateTo<KeywordViewModel>();
             });
-        }
 
+
+            Navigation.registerAdditionalWindows<ArmyAddViewModel, ArmyAvailableUnitsView>();
+        }
     }
 }
