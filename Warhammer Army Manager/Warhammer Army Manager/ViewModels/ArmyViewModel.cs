@@ -21,16 +21,7 @@ namespace Warhammer_Army_Manager.ViewModels
         public RelayCommand DeleteArmyCommand { get; set; }
         public RelayCommand ShowArmyCommand { get; set; }
 
-        private IWindowService _window;
-        public IWindowService WindowService
-        {
-            get => _window;
-            set
-            {
-                _window = value;
-                OnPropertyChanged();
-            }
-        }
+        public IWindowService WindowService { get; set; }
 
         public ArmyViewModel(IWindowService window, DashboardViewModel DashboardVM, ArmyShowViewModel ArmyShowVM, ArmyShowView ArmyShowView)
         {

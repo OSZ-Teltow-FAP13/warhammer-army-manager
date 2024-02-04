@@ -45,12 +45,11 @@
         </StackPanel>
 
         <ListView Grid.Row="2"
-              Name="ArmyListView"
-              ItemsSource="{Binding Armys}"
-              SelectedItem="{Binding SelectedArmy}"
-              HorizontalAlignment="Left"
-              MaxHeight="400" 
-              Style="{StaticResource ListViewTheme}">
+                  ItemsSource="{Binding Armys}"
+                  SelectedItem="{Binding SelectedArmy}"
+                  HorizontalAlignment="Left"
+                  MaxHeight="400"
+                  Style="{StaticResource ListViewTheme}">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
 

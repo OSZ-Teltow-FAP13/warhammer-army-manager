@@ -11,6 +11,8 @@ using System.Windows.Input;
 using Warhammer_Army_Manager.Commands;
 using Warhammer_Army_Manager.Database;
 using Warhammer_Army_Manager.Database.Models;
+using Warhammer_Army_Manager.Services;
+using Warhammer_Army_Manager.Views;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
@@ -20,7 +22,10 @@ namespace Warhammer_Army_Manager.ViewModels
         public ObservableCollection<Unit> UnitsAvailable { get; set; } = new();
         public RelayCommand AddUnitCommand { get; set; }
         public RelayCommand SaveCommand { get; set; }
+        public RelayCommand OpenAvailableUnitsWindowCommand { get; set; }
         public Unit SelectedUnit { get; set; }
+
+        public IWindowService WindowService { get; set; }
 
         private string _name;
         public string Name
@@ -45,9 +50,8 @@ namespace Warhammer_Army_Manager.ViewModels
             }
         }
 
-        protected int _max;
-        private string _maxPoints;
-        public string MaxPoints
+        private int _maxPoints;
+        public int MaxPoints
         {
             get => _maxPoints;
             set
@@ -57,20 +61,21 @@ namespace Warhammer_Army_Manager.ViewModels
             }
         }
 
-        public ArmyAddViewModel(DashboardViewModel dvm, ArmyViewModel avm)
+        public ArmyAddViewModel(IWindowService window, DashboardViewModel dvm, ArmyViewModel avm, ArmyAvailableUnitsView aauv)
         {
+            WindowService = window;
+
             PopulateUnitsList();
             ResetTotalPoints();
 
-            _max = 2000;
-            MaxPoints = $"Maximal: {_max}";
+            MaxPoints = 2000;
 
             AddUnitCommand = new RelayCommand(o =>
             {
                 if (SelectedUnit is null)
                     return;
 
-                if(SelectedUnit.Points+_total > _max)
+                if(SelectedUnit.Points+_total > MaxPoints)
                 {
                     MessageBox.Show("Einheit konnte nicht hinzugefügt werden.\nDie maximale Armee Punktzahl wurde überschritten.", "Einheit hinzufügen fehlgeschlagen", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
@@ -117,6 +122,11 @@ namespace Warhammer_Army_Manager.ViewModels
 
                 avm.Armys.Add(newArmy);
                 Name = "";
+            });
+
+            OpenAvailableUnitsWindowCommand = new RelayCommand(o =>
+            {
+                WindowService.ShowWindow(aauv, (o as Window)!);
             });
         }
 

@@ -44,12 +44,18 @@ namespace Warhammer_Army_Manager
             {
                 DataContext = provider.GetRequiredService<ArmyShowViewModel>()
             });
+            services.AddSingleton<ArmyAvailableUnitsViewModel>();
+            services.AddSingleton<ArmyAvailableUnitsView>(provider => new ArmyAvailableUnitsView()
+            {
+                DataContext = provider.GetRequiredService<ArmyAvailableUnitsViewModel>()
+            });
             services.AddSingleton<UnitViewModel>();
             services.AddSingleton<WeaponViewModel>();
             services.AddSingleton<KeywordViewModel>();
 
             // actual services
             services.AddSingleton<INavigationService, NavigationService>();
+            services.AddSingleton<IViewModelLocator, ViewModelLocator>();
             services.AddSingleton<Func<Type, ViewModel>>(serviceProvider => viewModelType => (ViewModel)serviceProvider.GetRequiredService(viewModelType));
             services.AddSingleton<ViewModelLocator>();
             services.AddSingleton<IWindowService, WindowService>();

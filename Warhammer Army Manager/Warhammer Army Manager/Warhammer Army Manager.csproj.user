@@ -6,6 +6,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\ArmyAvailableUnitsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ArmyAddView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -42,6 +45,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Theme\WindowButtonTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ArmyAvailableUnitsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ArmyAddView.xaml">
