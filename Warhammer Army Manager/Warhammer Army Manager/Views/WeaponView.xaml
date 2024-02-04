@@ -14,12 +14,10 @@
            HorizontalAlignment="Left"
            Margin="0,0,0,20"/>
 
-        <ListView Grid.Row="2"
-          Name="WeaponListView"
-          ItemsSource="{Binding Weapons}"
-          HorizontalAlignment="Left"
-          MaxHeight="400"
-          Style="{StaticResource ListViewTheme}">
+        <ListView ItemsSource="{Binding Weapons}"
+                  HorizontalAlignment="Stretch"
+                  MaxHeight="580"
+                  Style="{StaticResource ListViewTheme}">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
                     <GridViewColumn Header="ID"

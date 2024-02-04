@@ -13,7 +13,7 @@
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
         <ScrollViewer CanContentScroll="True" 
-                      MaxHeight="500">
+                      MaxHeight="580">
             <ItemsControl ItemsSource="{Binding Units}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -22,16 +22,16 @@
                                 <RectangleGeometry 
                                     RadiusX="5"
                                     RadiusY="5" 
-                                    Rect="0,0,720,210"/>
+                                    Rect="0,0,820,210"/>
                             </Border.Clip>
                             <Grid Height="210">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="140"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/Resources/unit02.jpg" Width="220" Margin="-40,0,0,0"/>
+                                <Image Source="/Resources/unit02.jpg" Width="220" Margin="-30,0,0,0"/>
                                 <Grid Grid.Column="1" Margin="20,10,0,10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30"/>

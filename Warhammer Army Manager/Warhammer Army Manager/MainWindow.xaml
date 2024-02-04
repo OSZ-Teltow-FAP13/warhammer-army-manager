@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:Warhammer_Army_Manager.ViewModels"
         mc:Ignorable="d"
         Title="Warhammer Army Manager"
-        Height="610" Width="930"
+        Height="710" Width="1030"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -26,7 +26,7 @@
         </Border.Effect>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="175"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
@@ -112,7 +112,7 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding TagViewCommand}"/>
-                <TextBlock Margin="10,70,0,10"
+                <TextBlock Margin="10,170,0,10"
                            Foreground="#444" >
                     Von: <LineBreak /> Marc Bonneß <LineBreak /> Maximilian Mewes <LineBreak /> Marian Buhle
                 </TextBlock>
