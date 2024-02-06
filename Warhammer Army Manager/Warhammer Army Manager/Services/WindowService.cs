@@ -14,8 +14,11 @@ namespace Warhammer_Army_Manager.Services
     {
         public void ShowWindow(Window view, Window p)
         {
+            // make sure window closes when parent gets closed
             view.Owner = p;
+
             view.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
             view.Show();
         }
     }

@@ -1,0 +1,40 @@
+﻿<Window x:Class="Warhammer_Army_Manager.Views.ArmyAvailableUnitsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warhammer_Army_Manager.Views"
+        mc:Ignorable="d"
+        Title="Einheiten Auswählen" Height="480" Width="440"
+        ResizeMode="NoResize">
+    <StackPanel>
+
+        <ListView HorizontalAlignment="Left"
+                  ItemsSource="{Binding Units}"
+                  SelectedItem="{Binding SelectedUnit}"
+                  MaxHeight="400"
+                  Style="{StaticResource ListViewTheme}">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
+                    <GridViewColumn Header="Name"
+                                    DisplayMemberBinding="{Binding Name}"
+                                    Width="300" />
+                    <GridViewColumn Header="Points"
+                                    DisplayMemberBinding="{Binding Points}"
+                                    Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Command="{Binding AddCommand}"
+                    Content="Einheit Hinzufügen"
+                    FontSize="18"
+                    Padding="8"
+                    Foreground="White" 
+                    Background="{StaticResource Primary}" 
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom"/>
+    </StackPanel>
+</Window>

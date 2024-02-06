@@ -6,8 +6,10 @@
     <RootNamespace>Warhammer_Army_Manager</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <ApplicationIcon>Resources\warhammer_icon.ico</ApplicationIcon>
-    <StartupObject></StartupObject>
     <IsPublishable>True</IsPublishable>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <Title>$(AssemblyName)</Title>

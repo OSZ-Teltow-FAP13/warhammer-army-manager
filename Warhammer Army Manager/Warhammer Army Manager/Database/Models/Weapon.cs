@@ -29,7 +29,7 @@ namespace Warhammer_Army_Manager.Database.Models
         public string? Damage { get; set; }
         public string? SpecialEffect { get; set; }
 
-        public virtual ICollection<Unit> Units { get; private set; } = new ObservableCollection<Unit>();
+        public virtual ICollection<Unit> Units { get; private set; } = new List<Unit>();
     }
 }
 

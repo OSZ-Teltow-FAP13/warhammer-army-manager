@@ -14,23 +14,24 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
-
-        <ListView Grid.Row="2"
-                  Name="KeywordListView"
+        
+        <ListView Name="KeywordListView"
                   ItemsSource="{Binding Keywords}"
                   SelectedItem="{Binding SelectedKeyword}"
-                  HorizontalAlignment="Left"
-                  MaxHeight="400"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  MaxHeight="580"
                   SelectionMode="Single"
                   Style="{StaticResource ListViewTheme}">
 
             <ListView.View>
-                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}">
+                <GridView ColumnHeaderContainerStyle="{StaticResource FlatHeaderStyle}"
+                          AllowsColumnReorder="False">
                     <GridViewColumn Header="ID" 
                                     DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Name" 
                                     DisplayMemberBinding="{Binding Name}" 
-                                    Width="650"/>
+                                    Width="700" />
                 </GridView>
             </ListView.View>
         </ListView>

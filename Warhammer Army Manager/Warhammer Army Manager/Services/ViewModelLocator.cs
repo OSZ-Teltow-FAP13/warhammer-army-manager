@@ -8,7 +8,7 @@ using Warhammer_Army_Manager.ViewModels;
 
 namespace Warhammer_Army_Manager.Services
 {
-    class ViewModelLocator
+    class ViewModelLocator : IViewModelLocator
     {
         private readonly IServiceProvider _provider;
 

@@ -45,6 +45,10 @@
                 <views:ArmyAddView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:ArmyAvailableUnitsViewModel}">
+                <views:ArmyAvailableUnitsView/>
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewModel:UnitViewModel}">
                 <views:UnitView/>
             </DataTemplate>

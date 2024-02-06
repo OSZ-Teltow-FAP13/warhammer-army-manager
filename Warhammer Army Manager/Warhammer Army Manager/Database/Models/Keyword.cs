@@ -15,6 +15,6 @@ namespace Warhammer_Army_Manager.Database.Models
         public int Id { get; set; }
         [Required, MaxLength(100)]
         public string? Name { get; set; }
-        public virtual ICollection<Unit> Units { get; private set; } = new ObservableCollection<Unit>();
+        public virtual ICollection<Unit> Units { get; private set; } = new List<Unit>();
     }
 }

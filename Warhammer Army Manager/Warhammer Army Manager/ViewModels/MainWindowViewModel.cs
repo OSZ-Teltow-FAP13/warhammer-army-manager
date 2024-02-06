@@ -12,7 +12,9 @@ using System.Windows.Input;
 using Warhammer_Army_Manager.Services;
 using Warhammer_Army_Manager.Database.Models;
 using Warhammer_Army_Manager.Commands;
+using Warhammer_Army_Manager.Views;
 using System.Reflection;
+using System.Windows;
 
 namespace Warhammer_Army_Manager.ViewModels
 {
@@ -26,18 +28,8 @@ namespace Warhammer_Army_Manager.ViewModels
         public RelayCommand WeaponViewCommand { get; set; }
         public RelayCommand TagViewCommand { get; set; }
 
-        private INavigationService _navigation;
+        public INavigationService Navigation { get; set; }
 
-        public INavigationService Navigation
-        {
-            get => _navigation;
-            set 
-            {
-                _navigation = value;
-                OnPropertyChanged();
-            }
-        }
-        
         public MainWindowViewModel(INavigationService nav)
         {
             Version = $"Version: {Assembly.GetExecutingAssembly().GetName().Version!.ToString()}";
@@ -74,7 +66,9 @@ namespace Warhammer_Army_Manager.ViewModels
             {
                 Navigation.NavigateTo<KeywordViewModel>();
             });
-        }
 
+
+            Navigation.registerAdditionalWindows<ArmyAddViewModel, ArmyAvailableUnitsView>();
+        }
     }
 }
