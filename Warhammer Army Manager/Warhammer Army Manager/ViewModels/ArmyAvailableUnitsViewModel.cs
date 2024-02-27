@@ -36,7 +36,10 @@ namespace Warhammer_Army_Manager.ViewModels
                     return;
 
                 ArmyAddViewModel aavm = Locator.GetVM<ArmyAddViewModel>() as ArmyAddViewModel;
-                aavm.UnitsSelected.Add(SelectedUnit); 
+                aavm.UnitsSelected.Add(SelectedUnit);
+
+
+                aavm.updatePoints();
             });
         }
 

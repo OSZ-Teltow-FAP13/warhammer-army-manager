@@ -83,13 +83,7 @@ namespace Warhammer_Army_Manager.ViewModels
 
                 UnitsSelected.Add(SelectedUnit);
                 UnitsAvailable.Remove(SelectedUnit);
-                int total = 0;
-
-                foreach (Unit u in UnitsSelected)
-                    total += u.Points;
-
-                TotalPoints = $"Punkte: {total}";
-                _total = total;
+                this.updatePoints();
             });
 
             SaveCommand = new RelayCommand(o =>
@@ -138,6 +132,17 @@ namespace Warhammer_Army_Manager.ViewModels
         protected void ResetTotalPoints()
         {
             TotalPoints = "Punkte: 0";
+        }
+
+        public void updatePoints()
+        {
+            int total = 0;
+
+            foreach (Unit u in UnitsSelected)
+                total += u.Points;
+
+            TotalPoints = $"Punkte: {total}";
+            _total = total;
         }
     }
 }
